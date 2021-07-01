@@ -1,0 +1,19 @@
+header{
+    border: 2px solid red;
+}
+
+.HeaderNavItem{
+    margin-left: 250px;
+    font-size: 28px;    
+}
+
+.HeaderNavItem:hover{
+    color:blue;
+}
+
+.Logo{
+    display: flex;
+    height: 175px;
+    width: 200px;
+    border: 2px solid blue;
+}

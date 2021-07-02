@@ -1,5 +1,5 @@
 header{
-    border: 2px solid red;
+    display:flex;
 }
 
 .HeaderNavItem{
@@ -15,5 +15,4 @@ header{
     display: flex;
     height: 175px;
     width: 200px;
-    border: 2px solid blue;
 }

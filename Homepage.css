@@ -1,15 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
 header{
     display:flex;
 }
 
 .HeaderNavItem{
-    margin-left: 250px;
-    font-size: 28px;    
+    color: black;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: .3vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2vw;
+}
+
+.HeaderButton{
+    display: flex;
+    border:0.2em solid #000000;
+    border-radius:0.12em;
+    font-weight:300;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    margin-left: 12vw;
+    cursor: pointer;
 }
 
 .HeaderNavItem:hover{
-    color:blue;
+    color:#FFFFFF;
+    transition: all 500ms ease;
+    background-color: #000000;
 }
+
 
 .Logo{
     display: flex;

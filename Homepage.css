@@ -19,8 +19,12 @@ header{
     margin-left: 50px;
 }
 
+#Email:hover{
+    font-size: 2.5vw;
+}
+
 .HeaderBorder1{
-    margin-top: .2vw;
+    margin-top: .4vw;
     border-radius: 120px 0px;
     border-bottom: .8vw ridge red;
 }
@@ -95,10 +99,13 @@ p{
 
 
 .Logo{
-    display: flex;
     height: 10.28vw;
     width: 12vw;
     margin-right: -3vw;
+}
+
+.Logo:hover{
+    filter: invert(0.18)
 }
 
 .ContactElement{

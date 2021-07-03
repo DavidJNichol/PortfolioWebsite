@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
 
 header{
     display:flex;
@@ -14,9 +15,12 @@ header{
     font-size: 2vw;
 }
 
+#Phone{
+    margin-left: 50px;
+}
 
 .HeaderBorder1{
-    margin-top: 2vw;
+    margin-top: .2vw;
     border-radius: 120px 0px;
     border-bottom: .8vw ridge red;
 }
@@ -39,7 +43,7 @@ header{
     font-weight:300;
     margin-top: 4vw;
     margin-bottom: 4vw;
-    margin-left: 11vw;
+    margin-left: 14vw;
     cursor: pointer;
 }
 
@@ -50,26 +54,27 @@ header{
 }
 
 .AboutMeTitle{
-    margin-left: 43vw;
-    font-family: 'Lora', serif;
+    margin-left: 39.5vw;
+    font-family: 'STIX Two Math', serif;
+    font-size: 3vw;
+    margin-top: 1.3vw;
+    height: 50px;
 }
 
 .AboutMe{
-    height: 25vw;
+    height: 24.6vw;
     width: 85vw;
-    margin-left: 4vw;
+    margin-left: 6vw;
     border-bottom: .8vw ridge red;
     border-right: .8vw ridge yellow;
     border-left: .8vw ridge blue;
-    border-top: 2px solid black;
-    margin-top: 1.5vw;
 }
 
 .AboutMeDescription{
     display: inline-block;
-    margin-left: 2vw;
+    margin-left: 2.5vw;
     font-size: 1.8vw;
-    margin-top: .5vw;
+    margin-top: 1vw;
     font-family: 'Karla', sans-serif;
 }
 
@@ -81,7 +86,7 @@ p{
     display: inline;
     float: right;
     height: 21vw;
-    width: 15.75vw;
+    width: 16vw;
     margin-top: 1.5vw;
     margin-right: 1.2vw;
 	border: .7vw solid #333;
@@ -91,7 +96,36 @@ p{
 
 .Logo{
     display: flex;
-    height: 12vw;
-    width: 14vw;
-    padding-right: 20px;
+    height: 10.28vw;
+    width: 12vw;
+    margin-right: -3vw;
+}
+
+.ContactElement{
+    margin-left: 20.5vw;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ContactEntry{
+    font-size: 2vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.SocialMediaElement{
+    display: inline-block;
+    vertical-align:middle;
+    margin-top: .5vw;
+}
+
+.SocialMediaEntry{
+    height: 3vw;
+    width: 3vw;
+    margin-left: 3vw;
+}
+
+.SocialMediaEntry:hover{
+    filter: invert(0.35) sepia(1) saturate(9.2) hue-rotate(360deg) brightness(1.2);
 }

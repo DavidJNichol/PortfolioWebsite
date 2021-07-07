@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
+
+header{
+    display:flex;
+}
+
+.Logo{
+    height: 10.28vw;
+    width: 12vw;
+    margin-right: -3vw;
+    margin-bottom: 1.5vw;
+}
+
+.Logo:hover{
+    filter: invert(0.18)
+}
+
+.HeaderNavItem{
+    color: black;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: .2vw;
+    padding-bottom: .2vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2vw;
+}
+
+.Entry-Header{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3vw;
+}
+
+.CSharpLogo{
+    height: 12vw;
+    width: 12vw;
+    border: 2px solid red;
+}
+
+.HeaderBorder1{
+    margin-top: .2vw;
+    border-radius: 120px 0px;
+    border-bottom: .8vw ridge red;
+}
+
+.HeaderBorder2{
+    border-radius: 120px 0px;
+    border-bottom: .8vw ridge yellow;
+}
+
+.HeaderBorder3{
+    border-radius: 120px 0px;
+    border-bottom: .8vw ridge blue;
+}
+
+.HeaderButton{
+    height: 20%;
+    display: flex;
+    border:0.35em solid #000000;
+    border-radius:0.12em;
+    font-weight:300;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    margin-left: 14vw;
+    cursor: pointer;
+}
+
+.HeaderNavItem:hover{
+    color:#FFFFFF;
+    transition: all 500ms ease;
+    background-color: #000000;
+}
+
+.ContactElement{
+    margin-left: 6.5vw;
+    margin-right: 3.5vw;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ContactEntry{
+    font-size: 2vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.SocialMediaElement{
+    display: inline-block;
+    vertical-align:middle;
+    margin-top: .5vw;
+}
+
+.SocialMediaEntry{
+    height: 3vw;
+    width: 3vw;
+    margin-left: 10vw;
+}
+
+.SocialMediaEntry:hover{
+    filter: invert(0.35) sepia(1) saturate(9.2) hue-rotate(360deg) brightness(1.2);
+}

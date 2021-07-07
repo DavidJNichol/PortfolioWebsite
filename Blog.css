@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
 
 header{
     display:flex;
 }
-
-.PDF{
-    margin-top: 2vw;
-    border-bottom: .8vw ridge red;
-    border-right: .8vw ridge yellow;
-    border-left: .8vw ridge blue;
-}
-
 
 .Logo{
     height: 10.28vw;
@@ -21,22 +15,6 @@ header{
 
 .Logo:hover{
     filter: invert(0.18)
-}
-
-.HeaderBorder1{
-    margin-top: 1vw;
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge red;
-}
-
-.HeaderBorder2{
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge yellow;
-}
-
-.HeaderBorder3{
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge blue;
 }
 
 .HeaderNavItem{
@@ -50,6 +28,21 @@ header{
     transition: all 500ms ease;
 }
 
+.HeaderBorder1{
+    margin-top: .2vw;
+    border-radius: 120px 0px;
+    border-bottom: .8vw ridge red;
+}
+
+.HeaderBorder2{
+    border-radius: 120px 0px;
+    border-bottom: .8vw ridge yellow;
+}
+
+.HeaderBorder3{
+    border-radius: 120px 0px;
+    border-bottom: .8vw ridge blue;
+}
 
 .HeaderButton{
     height: 20%;

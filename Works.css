@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Merriweather:wght@300&family=Montserrat&display=swap');
 
 header{
     display:flex;
@@ -25,11 +26,99 @@ header{
     padding-bottom: .2vw;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 2vw;
+    transition: all 500ms ease;
+}
+
+.Entry{
+    margin-left: 21vw;
 }
 
 .Entry-Header{
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 3vw;
+    font-size: 5vw;
+    border: .6vw solid black;
+    text-align: center;
+    margin-top: 2vw;
+    padding-bottom: .4vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    margin-bottom: 5vw;
+    transition: all 500ms ease;
+}
+
+.Entry-Header:hover{
+    color:#FFFFFF;
+    transition: all 500ms ease;
+    background-color: #000000;
+    border-bottom-color:  red;
+    border-left-color:  yellow;
+    border-right-color:  blue;
+}
+
+.TagHeader{
+    display: inline-block;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.7vw;
+}
+
+.TagEntries{
+    display: inline-flex;
+    border-radius: 2vw;
+    background-color: #07a3e6;
+    padding: .8vw;
+    color:white;
+    transition: all 400ms ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.TagEntries:hover{
+    padding: 1.5vw;
+    transition: all 400ms ease;
+}
+
+.Item{
+    margin-left: 1vw;
+}
+
+.Item-Header{
+    font-size: 2.2vw;
+    margin-bottom: 2vw;
+    transition: all 500ms ease;
+    margin-top: 2vw;
+}
+
+.Item-Link{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-family: 'Exo 2', sans-serif;
+    border: .5vw solid black;
+    text-align: center;
+    transition: all 500ms ease;
+    padding: .6vw;
+}
+
+.Item-Link:hover{
+    color:#FFFFFF;
+    transition: all 500ms ease;
+    background-color: #000000;
+    border-bottom-color:  red;
+    border-left-color:  yellow;
+    border-right-color:  blue;
+    transform: translateY(-.6vw);
+}
+
+.Item-Description{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2vw;
+    margin-right: 24vw;
+    margin-top: 2vw;
+}
+
+.Date{
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2vw;
+    margin-top: 1vw;
 }
 
 .CSharpLogo{
@@ -64,6 +153,21 @@ header{
     margin-bottom: 4vw;
     margin-left: 14vw;
     cursor: pointer;
+}
+
+img{
+    margin-top: 1vw;
+    border: .4vw solid black;
+    height: 24.8vw;
+    width: 24.5vw;
+}
+
+.LargeImg{
+    display: flex;
+    margin-top: 1vw;
+    border: .4vw solid black;
+    height: 25vw;
+    width: 50vw;
 }
 
 .HeaderNavItem:hover{

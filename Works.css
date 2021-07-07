@@ -38,7 +38,7 @@ header{
     font-size: 5vw;
     border: .6vw solid black;
     text-align: center;
-    margin-top: 2vw;
+    margin-top: 3vw;
     padding-bottom: .4vw;
     margin-right: 10vw;
     margin-left: 10vw;
@@ -84,7 +84,7 @@ header{
     font-size: 2.2vw;
     margin-bottom: 2vw;
     transition: all 500ms ease;
-    margin-top: 2vw;
+    margin-top: 4vw;
 }
 
 .Item-Link{
@@ -168,6 +168,26 @@ img{
     border: .4vw solid black;
     height: 25vw;
     width: 50vw;
+}
+
+.VideoContainer{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 35.25%;
+    margin-left: .5vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.Video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 67%;
+    height: 100%;
 }
 
 .HeaderNavItem:hover{

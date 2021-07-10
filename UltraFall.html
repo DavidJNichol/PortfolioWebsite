@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Ultra Fall</title>
+    <link rel="shortcut icon" href="Ultra Fall/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="Ultra Fall/TemplateData/style.css">
+    <script src="Ultra Fall/TemplateData/UnityProgress.js"></script>
+    <script src="Ultra Fall/Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Ultra Fall/Build/WebGLBuild.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <img class = "BackgroundStars1" src="Images/Stars.png" alt="">
+    <img class = "BackgroundStars2" src="Images/Stars.png" alt="">
+    <img class = "BackgroundStars3" src="Images/Stars.png" alt="">
+    <img class = "BackgroundStars4" src="Images/Stars.png" alt="">
+      
+    <div class = "GameHeading"><img src="Images/pxArt.png" alt=""></div>
+
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 1200px; height: 600px"></div>
+      <div class="footer">
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+      </div>
+
+      <div class = "Instructions">WASD or Arrow Keys to Move, Space to Shoot, ESC to Pause</div>
+
+      
+
+      <a href = "index.html" class = "HomeButton">Back To Home</a>
+    </div>
+  </body>
+</html>
+ 

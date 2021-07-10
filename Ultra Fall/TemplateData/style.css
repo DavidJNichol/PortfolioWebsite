@@ -23,12 +23,6 @@ body{
     background-image: url('https://ibb.co/z5wLhBt');
 }
 
-.GameHeading{
-    margin-left: 28.5%;
-    width: 40vw;
-    height: 10vh;
-}
-
 .Instructions{
     color: white;
     font-family: 'Press Start 2P', cursive;

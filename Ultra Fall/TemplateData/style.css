@@ -24,8 +24,9 @@ body{
 }
 
 .GameHeading{
-    margin: auto;
-    width: 73%;
+    margin-left: 13%;
+    width: 20vw;
+    height: 10vh;
 }
 
 .Instructions{

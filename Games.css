@@ -16,10 +16,6 @@ header{
     transition: all 500ms ease;
 }
 
-#Phone{
-    margin-left: 50px;
-}
-
 .HeaderBorder1{
     margin-top: .4vw;
     border-radius: 120px 0px;
@@ -53,79 +49,6 @@ header{
     transition: all 500ms ease;
     background-color: #000000;
 }
-
-.AboutMeTitle{
-    margin-left: 15vw;
-    width: 50%;
-    text-align: center;
-    font-family: 'STIX Two Math', serif;
-    font-size: 3vw;
-    margin-top: 1.3vw;
-}
-
-.AboutMe{
-    height: 24vw;
-    width: 85vw;
-    margin-left: 6vw;
-    border-bottom: .8vw ridge red;
-    border-right: .8vw ridge yellow;
-    border-left: .8vw ridge blue;
-}
-
-.EmailButton{
-    font-size: 2vw;
-    border: .4vw solid black;
-    margin-left: 10vw;
-    width: 50%;
-    text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 2vw;
-    box-shadow: .1vw .4vw 6px 1px #7a7a7a;
-    transition: all 500ms ease;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-    margin: auto;
-    width: auto;
-    height: auto;
-}
-
-.EmailButton:hover{
-    color:#FFFFFF;
-    transition: all 500ms ease;
-    background-color: #000000;
-    border-bottom-color:  red;
-    border-left-color:  yellow;
-    border-right-color:  blue;
-    transform: scale(.9);
-}
-
-
-.AboutMeDescription{
-    display: inline-block;
-    margin-left: 2.5vw;
-    font-size: 1.8vw;
-    margin-top: .5vw;
-    font-family: 'Karla', sans-serif;
-}
-
-p{
-    width: 60vw;
-}
-
-.ImageOfMe{  
-    display: inline;
-    float: right;
-    height: 21vw;
-    width: 16vw;
-    margin-top: 1vw;
-    margin-right: 1vw;
-	border: .7vw solid #333;
-	box-shadow: 0 0 0 15vw rgba(125,135,18,0.3) inset;
-}
-
 
 .Logo{
     height: 10.28vw;

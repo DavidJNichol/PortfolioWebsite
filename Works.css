@@ -54,12 +54,13 @@ header{
     display: inline-block;
     font-family: 'Exo 2', sans-serif;
     font-size: 1.7vw;
+    font-weight:500;
 }
 
 .TagEntries{
     display: inline-flex;
     border-radius: 2vw;
-    background-color: #07a3e6;
+    background-color: #45BCF7;
     padding: .8vw;
     color:white;
     transition: all 400ms ease;
@@ -105,6 +106,7 @@ header{
     font-size: 2vw;
     margin-right: auto;
     margin-top: 2vw;
+    text-align: center;
 }
 
 a{
@@ -142,7 +144,7 @@ a{
 .HeaderButton{
     height: 20%;
     display: flex;
-    border:0.35em solid #000000;
+    border: .35vw solid #000000;
     border-radius:0.12em;
     font-weight:300;
     margin-top: 4vw;
@@ -151,11 +153,51 @@ a{
     cursor: pointer;
 }
 
+.GameButton{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3vw;
+    font-family: 'Exo 2', sans-serif;
+    width: 25vw;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin-bottom: 1vw;
+    color: maroon;
+    margin-left: -1vw;
+}
+
+.GameButton span{
+    cursor: pointer;
+   position: relative;
+   transition: 0.4s;
+}
+
+.GameButton span::after{
+    content: '\00bb';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -3vw;
+   transition: 0.5s;
+}
+
+.GameButton:hover span{
+    padding-right: 1.7vw;
+    color: maroon;
+}
+
+.GameButton:hover span::after{
+    opacity: 1;
+   right: 0;
+}
+
 img{
+    margin-left: 1vw;
     margin-top: 1vw;
     border: .4vw solid black;
-    height: 24.8vw;
-    width: 24.5vw;
+    height: 45%;
+    width: 45%;
     transition: all 300ms ease;
 }
 
@@ -168,6 +210,7 @@ img:hover{
 .LargeImg{
     display: flex;
     margin-top: 1vw;
+    margin-left: 0vw;
     border: .4vw solid black;
     height: 25vw;
     width: 50vw;

@@ -54,7 +54,7 @@ header{
 .HeaderButton{
     height: 20%;
     display: flex;
-    border:0.35em solid #000000;
+    border: .35vw solid #000000;
     border-radius:0.12em;
     font-weight:300;
     margin-top: 4vw;

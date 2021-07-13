@@ -63,52 +63,10 @@ header{
     background-color: #000000;
 }
 
-.BlogEntry{
-    background-color: #cc2568;
-    border-radius: 1vw;
-    color: white;
-    margin-left: 6vw;
-    margin-top: 2vw;
-    width: 40vw;
-    height: 50vh;
-    display: inline-block;
-    text-align: center;
-    transition: all 300ms ease;
-}
-
-.BlogEntry:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-    transition: all 300ms ease;
-}
-
-.Header{
-    display: inline-block;
-    font-size: 2vw;
-    font-family: 'Roboto Slab', serif;
-    margin-top: .3vw;
-}
-
-.Thumbnail{
-    width: 50%;
-    height: 50%;
-    display: flex;
-    margin: auto;
-    padding-top: 1%;
-    padding-bottom: 2%;
-}
-
-.Description{
-    margin-left: 2%;
-    float: left;
-    width: 80%;
-    margin-left: 3.7vw;
-    font-family: 'Nunito Sans', sans-serif;
-}
-
 footer{
-    margin-top: 3vw;
+    margin-top: 20vw;
 }
+
 
 .ContactElement{
     margin-left: 6.5vw;

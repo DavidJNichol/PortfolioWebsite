@@ -48,6 +48,7 @@ header{
     margin-left: 10vw;
     margin-bottom: 5vw;
     transition: all 500ms ease;
+    background-color:#d6d0d0;
 }
 
 .TagHeader{
@@ -92,9 +93,7 @@ header{
 }
 
 .Item-Link:hover{
-    color:#FFFFFF;
     transition: all 500ms ease;
-    background-color: #000000;
     border-bottom-color:  red;
     border-left-color:  yellow;
     border-right-color:  blue;
@@ -192,7 +191,7 @@ a{
    right: 0;
 }
 
-img{
+.Image{
     margin-left: 1vw;
     margin-top: 1vw;
     border: .4vw solid black;
@@ -201,7 +200,7 @@ img{
     transition: all 300ms ease;
 }
 
-img:hover{
+.Image:hover{
     transform: scale(1.5);
     transition: all 400ms ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -212,8 +211,15 @@ img:hover{
     margin-top: 1vw;
     margin-left: 0vw;
     border: .4vw solid black;
+    transition: all 400ms ease;
     height: 25vw;
     width: 50vw;
+}
+
+.LargeImg:hover{
+    transform: scale(1.5);
+    transition: all 400ms ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .VideoContainer{
@@ -233,6 +239,11 @@ img:hover{
     right: 0;
     width: 100%;
     height: 100%;
+}
+
+.GithubImage{
+    vertical-align: middle;
+    padding-bottom: .25vw;
 }
 
 .HeaderNavItem:hover{

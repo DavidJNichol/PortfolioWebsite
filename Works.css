@@ -193,7 +193,7 @@ a{
 
 .Image{
     margin-left: 1.4vw;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 1vw;
     height: 45%;
     width: 45%;
@@ -201,7 +201,7 @@ a{
 }
 
 .Image:hover{
-    transform: scale(1.5);
+    transform: scale(2.2);
     transition: all 400ms ease;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
@@ -209,14 +209,14 @@ a{
 .LargeImg{
     margin-top: 1vw;
     margin-left: 0vw;
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 400ms ease;
     height: 25vw;
     width: 50vw;
 }
 
 .LargeImg:hover{
-    transform: scale(1.5);
+    transform: scale(1.4);
     transition: all 400ms ease;
     box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
 }

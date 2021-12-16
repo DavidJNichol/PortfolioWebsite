@@ -192,9 +192,9 @@ a{
 }
 
 .Image{
-    margin-left: 1vw;
+    margin-left: 1.4vw;
+    border-radius: 8px;
     margin-top: 1vw;
-    border: .4vw solid black;
     height: 45%;
     width: 45%;
     transition: all 300ms ease;
@@ -203,14 +203,13 @@ a{
 .Image:hover{
     transform: scale(1.5);
     transition: all 400ms ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .LargeImg{
-    display: flex;
     margin-top: 1vw;
     margin-left: 0vw;
-    border: .4vw solid black;
+    border-radius: 8px;
     transition: all 400ms ease;
     height: 25vw;
     width: 50vw;
@@ -219,7 +218,7 @@ a{
 .LargeImg:hover{
     transform: scale(1.5);
     transition: all 400ms ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
 .VideoContainer{

@@ -5,6 +5,7 @@
 
 header{
     display:flex;
+    caret-color: transparent;
 }
 
 .Logo{
@@ -32,6 +33,7 @@ header{
 .Entry{
     margin: auto;
     width: 52%;
+    caret-color: transparent;
 }
 
 .Entry-Header{

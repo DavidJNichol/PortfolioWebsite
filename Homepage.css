@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
 
+*{
+    caret-color: transparent;
+}
+
 header{
     display:flex;
 }
@@ -21,7 +25,7 @@ header{
 }
 
 .HeaderBorder1{
-    margin-top: .4vw;
+    margin-top: -2vw;
     border-radius: 120px 0px;
     border-bottom: .8vw ridge red;
 }
@@ -70,6 +74,7 @@ header{
     border-bottom: .8vw ridge red;
     border-right: .8vw ridge yellow;
     border-left: .8vw ridge blue;
+    margin-top: -.8vw;
 }
 
 .EmailButton{
@@ -126,10 +131,9 @@ p{
 	box-shadow: 0 0 0 15vw rgba(125,135,18,0.3) inset;
 }
 
-
 .Logo{
-    height: 10.28vw;
-    width: 12vw;
+    height: 12vw;
+    width: 10vw;
     margin-right: -3vw;
 }
 
@@ -138,6 +142,7 @@ p{
 }
 
 .ContactElement{
+    margin-top: 1vw;
     margin-left: 6.5vw;
     margin-right: 3.5vw;
     display: inline-block;
@@ -159,6 +164,7 @@ p{
 }
 
 .SocialMediaEntry{
+    margin-top: .3vw;
     height: 3vw;
     width: 3vw;
     margin-left: 10vw;

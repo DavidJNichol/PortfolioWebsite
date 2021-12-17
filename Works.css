@@ -9,11 +9,11 @@ header{
 }
 
 .Logo{
-    height: 10.28vw;
-    width: 12vw;
+    height: 12vw;
+    width: 10vw;
     margin-right: -3vw;
-    margin-bottom: 1.5vw;
 }
+
 
 .Logo:hover{
     filter: invert(0.18)
@@ -127,7 +127,7 @@ a{
 }
 
 .HeaderBorder1{
-    margin-top: .2vw;
+    margin-top: -2vw;
     border-radius: 120px 0px;
     border-bottom: .8vw ridge red;
 }

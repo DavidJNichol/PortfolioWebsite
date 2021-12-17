@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .webgl-content * {border: 0; margin: 0; padding: 0}
 .webgl-content {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
 
@@ -16,3 +18,43 @@
 .webgl-content .footer .webgl-logo {background-image: url('webgl-logo.png'); width: 204px; float: left;}
 .webgl-content .footer .title {margin-right: 10px; float: right;}
 .webgl-content .footer .fullscreen {background-image: url('fullscreen.png'); width: 38px; float: right;}
+
+body{
+    background-color: black;
+}
+
+.Brick{
+    width: 5.56vw;
+    height: 4.335vw;
+}
+
+.Spacer{
+    margin-top: .5vw;
+}
+
+.HomeButton{
+    border: 2px solid white;
+    color:white;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+    width: 70%;
+    padding: 1vw;
+    transition: all 400ms ease;
+    display: inline-block;
+    text-align: center;
+    margin-left: 9vw;
+    margin-right: 13vw;
+    margin-top: -2vw;
+    background-color: black;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.HomeButton:hover{
+    transition: all 400ms ease;
+    color: yellow;
+}

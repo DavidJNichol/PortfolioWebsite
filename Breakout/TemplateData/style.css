@@ -72,3 +72,12 @@ body{
     cursor: pointer;
     transform: scale(2);
 }
+
+.Instructions{
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1vw;
+    text-align: center;
+    margin-top: -2vw;
+    margin-bottom: 2vw;
+}

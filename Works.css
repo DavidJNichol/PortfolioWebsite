@@ -154,6 +154,13 @@ a{
     cursor: pointer;
 }
 
+.UltraFallHeaderImg{
+    width: 50vw;
+    height: 5vw;
+    border-radius: 5px;
+    margin-top: 1vw;
+}
+
 .GameButton{
     display: block;
     text-align: center;

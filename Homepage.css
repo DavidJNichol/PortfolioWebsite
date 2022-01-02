@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
 
 *{
     caret-color: transparent;
@@ -7,6 +9,17 @@
 
 header{
     display:flex;
+    background-color: rgb(191,220,205);
+    position: relative;
+    margin-top: -1vw;
+    margin-left: -10px;
+    width: 101.2%;
+    margin-top: -4vw;
+}
+
+body{
+    background: #29354B url(Images/Background_Pattern.png) 0% 0% no-repeat padding-box;
+    opacity: 1;
 }
 
 .HeaderNavItem{
@@ -14,6 +27,7 @@ header{
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: .2vw;
+    margin-top: 5vw;
     padding-bottom: .2vw;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 2vw;
@@ -24,31 +38,12 @@ header{
     margin-left: 50px;
 }
 
-.HeaderBorder1{
-    margin-top: -2vw;
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge red;
-}
-
-.HeaderBorder2{
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge yellow;
-}
-
-.HeaderBorder3{
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge blue;
-}
-
 .HeaderButton{
     height: 20%;
     display: flex;
-    border: .35vw solid #000000;
     border-radius:0.12em;
     font-weight:300;
-    margin-top: 3vw;
-    margin-bottom: 4vw;
-    margin-left: 14vw;
+    margin-left: 3vw;
     cursor: pointer;
 }
 
@@ -59,34 +54,31 @@ header{
 }
 
 .AboutMeTitle{
-    margin-left: 15vw;
-    width: 50%;
-    text-align: center;
+    align-self: center;
+    margin-left: 10%;
     font-family: 'STIX Two Math', serif;
     font-size: 3vw;
-    margin-top: 1.3vw;
+    width: 20%;
+    margin-top: 7vw;
+    margin-bottom: .7vw;
+    color:#CADBCC
 }
 
 .AboutMe{
-    height: 24vw;
-    width: 85vw;
-    margin-left: 6vw;
-    border-bottom: .8vw ridge red;
-    border-right: .8vw ridge yellow;
-    border-left: .8vw ridge blue;
-    margin-top: -.8vw;
+    height: 50%;
+    align-self: center;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 12%;
 }
 
 .EmailButton{
+    display: flex;
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+    color:rgb(191,220,205);
     font-size: 2vw;
-    border: .4vw solid black;
-    margin-left: 10vw;
-    width: 50%;
-    text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 2vw;
-    box-shadow: .1vw .4vw 6px 1px #7a7a7a;
     transition: all 500ms ease;
+    margin-top: 1vw;
 }
 
 a{
@@ -98,60 +90,67 @@ a{
 }
 
 .EmailButton:hover{
-    color:#FFFFFF;
+    
     transition: all 500ms ease;
-    background-color: #000000;
-    border-bottom-color:  red;
-    border-left-color:  yellow;
-    border-right-color:  blue;
-    transform: scale(.9);
+    margin-left: 5vw;
+    transform: scale(1.1);
 }
-
 
 .AboutMeDescription{
-    display: inline-block;
-    margin-left: 2.5vw;
-    font-size: 1.8vw;
-    margin-top: .5vw;
-    font-family: 'Karla', sans-serif;
-}
-
-p{
-    width: 60vw;
+    font-size: 1.5vw;
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+    width: 40vw;
+    color: #F8F0E3;
+    letter-spacing: 0.34px;
 }
 
 .ImageOfMe{  
-    display: inline;
-    float: right;
-    height: 21vw;
-    width: 16vw;
-    margin-top: 1vw;
-    margin-right: 1vw;
-	border: .7vw solid #333;
-	box-shadow: 0 0 0 15vw rgba(125,135,18,0.3) inset;
+    height: 25vw;
+    width: 20vw;
+    margin-top: -5vw;
+    margin-left: 8vw;
+	background: transparent url('img/David.png') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 8px 6px #151617;
+}
+
+.LogoContainer{
+    width: 50%;
 }
 
 .Logo{
-    height: 12vw;
-    width: 10vw;
-    margin-right: -3vw;
+    height: 6vw;
+    width: 8vw;
+    margin-top: 2vw;
+    filter: invert(0%) sepia(0%) saturate(7476%) hue-rotate(198deg) brightness(111%) contrast(96%);
 }
 
 .Logo:hover{
     filter: invert(0.18)
 }
 
+.Name{
+    font-family: 'Sorts Mill Goudy', serif;
+    font-family: 'Gruppo', cursive;
+    font-size: 4vw;
+    display: inline-block;
+    margin-top: 4.2vw;
+    margin-left: 2vw;
+    color: black;
+    margin-bottom: 1.5vw;
+}
+
 .ContactElement{
-    margin-top: 1vw;
+    margin-top: 4vw;
     margin-left: 6.5vw;
     margin-right: 3.5vw;
     display: inline-block;
     vertical-align: middle;
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+    color: #CADBCC
 }
 
 .ContactEntry{
-    font-size: 2vw;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.7vw;
     padding-left: 1vw;
     padding-right: 1vw;
     font-weight: bold;
@@ -160,7 +159,8 @@ p{
 .SocialMediaElement{
     display: inline-block;
     vertical-align:middle;
-    margin-top: .5vw;
+    margin-top: 4vw;
+    filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);
 }
 
 .SocialMediaEntry{

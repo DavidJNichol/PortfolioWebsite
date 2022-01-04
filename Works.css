@@ -1,33 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Merriweather:wght@300&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
+
 
 header{
     display:flex;
-    caret-color: transparent;
+    background-color: rgb(191,220,205);
+    position: relative;
+    margin-top: -1vw;
+    margin-left: -10px;
+    width: 101.2%;
+    margin-top: -4vw;
+}
+
+.LogoContainer{
+    width: 50%;
 }
 
 .Logo{
-    height: 12vw;
-    width: 10vw;
-    margin-right: -3vw;
+    height: 6vw;
+    width: 8vw;
+    margin-top: 2vw;
+    filter: invert(0%) sepia(0%) saturate(7476%) hue-rotate(198deg) brightness(111%) contrast(96%);
 }
-
 
 .Logo:hover{
     filter: invert(0.18)
 }
+
+.Name{
+    font-family: 'Sorts Mill Goudy', serif;
+    font-family: 'Gruppo', cursive;
+    font-size: 4vw;
+    display: inline-block;
+    margin-top: 4.2vw;
+    margin-left: 2vw;
+    color: black;
+    margin-bottom: 1.5vw;
+}
+
 
 .HeaderNavItem{
     color: black;
     padding-left: 2vw;
     padding-right: 2vw;
     padding-top: .2vw;
+    margin-top: 5vw;
     padding-bottom: .2vw;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 2vw;
     transition: all 500ms ease;
+}
+
+.HeaderButton{
+    height: 20%;
+    display: flex;
+    border-radius:0.12em;
+    font-weight:300;
+    margin-left: 3vw;
+    cursor: pointer;
+}
+
+.HeaderNavItem:hover{
+    color:#FFFFFF;
+    transition: all 500ms ease;
+    background-color: #000000;
+}
+
+body{
+    background: #29354B url(Images/Background_Pattern.png) 0% 0% repeat padding-box;
+    opacity: 1;
 }
 
 .Entry{
@@ -39,10 +82,6 @@ header{
 .Entry-Header{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 5vw;
-    border-bottom: .4vw solid red;
-    border-left: .4vw solid yellow;
-    border-right: .4vw solid blue;
-    border-top: .4vw solid black;
     text-align: center;
     margin-top: 3vw;
     padding-bottom: .4vw;
@@ -50,7 +89,7 @@ header{
     margin-left: 10vw;
     margin-bottom: 5vw;
     transition: all 500ms ease;
-    background-color:#d6d0d0;
+    background-color:#FFFFCC;
 }
 
 .TagHeader{
@@ -58,12 +97,13 @@ header{
     font-family: 'Exo 2', sans-serif;
     font-size: 1.7vw;
     font-weight:500;
+    color:#CADBCC;
 }
 
 .TagEntries{
     display: inline-flex;
     border-radius: 2vw;
-    background-color: #45BCF7;
+    background-color: #31BEC3;
     padding: .8vw;
     color:white;
     transition: all 400ms ease;
@@ -80,18 +120,16 @@ header{
     margin-bottom: 2vw;
     transition: all 500ms ease;
     margin-top: 4vw;
+    color:#CADBCC;
 }
 
 .Item-Link{
     display: inline-block;
     text-decoration: none;
-    color: black;
     font-family: 'Exo 2', sans-serif;
-    border: .4vw solid black;
     text-align: center;
     transition: all 500ms ease;
-    padding: .6vw;
-    box-shadow: .1vw .4vw 6px 1px #7a7a7a;
+    color:#CADBCC;
 }
 
 .Item-Link:hover{
@@ -108,6 +146,7 @@ header{
     margin-right: auto;
     margin-top: 2vw;
     text-align: center;
+    color:#CADBCC;
 }
 
 a{
@@ -117,6 +156,7 @@ a{
 .Date{
     font-family: 'Exo 2', sans-serif;
     font-size: 2vw;
+    color:#CADBCC;
     margin-top: 1vw;
 }
 
@@ -124,34 +164,6 @@ a{
     height: 12vw;
     width: 12vw;
     border: 2px solid red;
-}
-
-.HeaderBorder1{
-    margin-top: -2vw;
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge red;
-}
-
-.HeaderBorder2{
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge yellow;
-}
-
-.HeaderBorder3{
-    border-radius: 120px 0px;
-    border-bottom: .8vw ridge blue;
-}
-
-.HeaderButton{
-    height: 20%;
-    display: flex;
-    border: .35vw solid #000000;
-    border-radius:0.12em;
-    font-weight:300;
-    margin-top: 3vw;
-    margin-bottom: 4vw;
-    margin-left: 14vw;
-    cursor: pointer;
 }
 
 .UltraFallHeaderImg{
@@ -252,24 +264,21 @@ a{
 .GithubImage{
     vertical-align: middle;
     padding-bottom: .25vw;
-}
-
-.HeaderNavItem:hover{
-    color:#FFFFFF;
-    transition: all 500ms ease;
-    background-color: #000000;
+    filter: invert(77%) sepia(94%) saturate(1395%) hue-rotate(142deg) brightness(80%) contrast(88%);
 }
 
 .ContactElement{
+    margin-top: 4vw;
     margin-left: 6.5vw;
     margin-right: 3.5vw;
     display: inline-block;
     vertical-align: middle;
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+    color: #CADBCC
 }
 
 .ContactEntry{
-    font-size: 2vw;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.7vw;
     padding-left: 1vw;
     padding-right: 1vw;
     font-weight: bold;
@@ -278,11 +287,12 @@ a{
 .SocialMediaElement{
     display: inline-block;
     vertical-align:middle;
-    margin-top: .5vw;
+    margin-top: 4vw;
+    filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);
 }
 
-
 .SocialMediaEntry{
+    margin-top: .3vw;
     height: 3vw;
     width: 3vw;
     margin-left: 10vw;

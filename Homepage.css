@@ -75,12 +75,14 @@ body{
   background-image: url("Images/Background_Pattern.png"); /* fallback */
   background-image: url("Images/Background_Pattern.png"), linear-gradient(#29354B, #080B0F); /* W3C */
 
+  background-attachment: fixed;
+
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 footer{
-    border: 3px solid red;
     position: absolute;
     bottom: 0;
     width: 100%;

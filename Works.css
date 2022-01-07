@@ -67,15 +67,25 @@ header{
 }
 
 body{
-  background: #29354B;
-  background-image: url("Images/Background_Pattern.png"); /* fallback */
-  background-image: url("Images/Background_Pattern.png"), linear-gradient(#29354B, #080B0F); /* W3C */
-
-  background-attachment: fixed;
-
-  position: relative;
-  min-height: 100vh;
+  
+    position: relative;
 }
+
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #29354B;
+    background-image: url("Images/Background_Pattern.png"), linear-gradient(#29354B, #080B0F); /* W3C */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
 footer{
     position: absolute;
@@ -191,11 +201,11 @@ a{
     text-transform: uppercase;
     font-size: 3vw;
     font-family: 'Exo 2', sans-serif;
-    width: 25vw;
+    width: 30vw;
     transition: all 0.4s;
     cursor: pointer;
     margin-bottom: 1vw;
-    color: maroon;
+    color: #FFFFCC;
     margin-left: -1vw;
 }
 
@@ -206,7 +216,7 @@ a{
 }
 
 .GameButton span::after{
-    content: '\00bb';
+   content: '\00bb';
    position: absolute;
    opacity: 0;
    top: 0;

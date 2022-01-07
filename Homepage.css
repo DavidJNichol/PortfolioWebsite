@@ -127,7 +127,6 @@ a{
 }
 
 .EmailButton:hover{
-    
     transition: all 500ms ease;
     margin-left: 5vw;
     transform: scale(1.1);

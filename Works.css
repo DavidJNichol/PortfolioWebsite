@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
 
+*{
+    caret-color: transparent;
+}
+
 header{
     display:flex;
     background-color: rgb(191,220,205);
@@ -104,7 +108,7 @@ footer{
     font-family: 'Raleway', sans-serif;
     font-size: 5vw;
     text-align: center;
-    margin-left: 6vw;
+    margin-left: 7vw;
     margin-top: 4.5vw;
     padding-bottom: .4vw;
     margin-right: 10vw;
@@ -198,10 +202,10 @@ a{
     text-align: left;
     text-transform: uppercase;
     font-size: 3vw;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Saira', sans-serif;
     transition: all 0.4s;
     cursor: pointer;
-    margin-top: -1vw;
+    margin-top: -1.5vw;
     margin-bottom: 1vw;
     color: white;
     display: inline-block;

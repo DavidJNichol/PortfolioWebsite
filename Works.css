@@ -2,15 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Saira:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
 
 header{
     display:flex;
     background-color: rgb(191,220,205);
     position: relative;
-    margin-top: -1vw;
     margin-left: -10px;
-    width: 101.2%;
+    width: 100.97%;
     margin-top: -4vw;
 }
 
@@ -68,7 +67,6 @@ header{
 }
 
 body{
-  
     position: relative;
 }
 
@@ -86,7 +84,7 @@ body::before {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-  }
+}
 
 footer{
     position: absolute;
@@ -103,16 +101,17 @@ footer{
 }
 
 .Entry-Header{
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 5vw;
     text-align: center;
+    margin-left: 6vw;
     margin-top: 4.5vw;
     padding-bottom: .4vw;
     margin-right: 10vw;
     align-self: center;
     margin-bottom: 4.5vw;
     transition: all 500ms ease;
-    color:#FFFFCC;
+    color:white;
 }
 
 .TagHeader{
@@ -153,7 +152,7 @@ footer{
     text-align: center;
     transition: all 500ms ease;
     font-family: 'Saira', sans-serif;
-    color:#CADBCC;
+    color:#FFFFCC;
 }
 
 .Item-Link:hover{
@@ -204,7 +203,7 @@ a{
     cursor: pointer;
     margin-top: -1vw;
     margin-bottom: 1vw;
-    color: #31BEC3;
+    color: white;
     display: inline-block;
 }
 
@@ -289,6 +288,8 @@ a{
 .GithubImage{
     vertical-align: middle;
     padding-bottom: .25vw;
+    height: 2vw;
+    width: 2vw;
     filter: invert(77%) sepia(94%) saturate(1395%) hue-rotate(142deg) brightness(80%) contrast(88%);
 }
 

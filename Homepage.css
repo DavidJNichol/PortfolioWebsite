@@ -13,7 +13,7 @@ header{
     position: relative;
     margin-top: -1vw;
     margin-left: -10px;
-    width: 101.2%;
+    width: 100.97%;
     margin-top: -4vw;
 }
 
@@ -70,23 +70,32 @@ header{
 }
 
 body{
-  background: #29354B;
-  background-image: url("Images/Background_Pattern.png"); /* fallback */
-  background-image: url("Images/Background_Pattern.png"), linear-gradient(#29354B, #080B0F); /* W3C */
+    position: relative;
+}
 
-  background-attachment: fixed;
-
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #29354B;
+    background-image: url("Images/Background_Pattern.png"), linear-gradient(#29354B, #080B0F); /* W3C */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 2.5rem;  
-    
+
+    margin-top: 5vw;
 }
 
 .AboutMeTitle{

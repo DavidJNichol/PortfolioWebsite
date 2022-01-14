@@ -184,12 +184,6 @@ a{
     margin-top: 1.3vw;
 }
 
-.CSharpLogo{
-    height: 12vw;
-    width: 12vw;
-    border: 2px solid red;
-}
-
 .UltraFallHeaderImg{
     width: 50vw;
     height: 5vw;
@@ -200,7 +194,6 @@ a{
 .GameButton{
     display: block;
     text-align: left;
-    text-transform: uppercase;
     font-size: 3vw;
     font-family: 'Saira', sans-serif;
     transition: all 0.4s;
@@ -228,7 +221,7 @@ a{
 
 .GameButton:hover span{
     padding-right: 1.7vw;
-    color: maroon;
+    color: #31BEC3;
 }
 
 .GameButton:hover span::after{

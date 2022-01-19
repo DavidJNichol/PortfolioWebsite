@@ -73,7 +73,7 @@
                     <img class = "Image"  src="Images/Fractals/JobsTest.gif" alt=""> 
                     <img class = "Image"  src="Images/Fractals/WeirdFractal.gif" alt=""> 
                 </div>
-                <div class = "Item-Description">Recursive 3D fractal generation in Unity’s early-stage ECS framework, which is an abstraction of Unity GameObjects into ultra lightweight entities so that thousands of them can be rendered at a time. This, coupled with Unity's version of multithreading - the jobs system, allows for <span style="color: green">2396%</span> more efficiency on frames. Each fractal parent spawns n children, with 5 base fractal parents. With the help of ECS and Unity's Jobs system, I was able to maintain 30 FPS with each parent having 8 children, 390625 objects in the scene, all having some sort of basic rotating movement. Without Jobs and ECS I was getting 30FPS with 15625 entities in the scene. </div>
+                <div class = "Item-Description">Recursive 3D fractal generation in Unity’s early-stage ECS framework, which is an abstraction of Unity GameObjects into ultra lightweight entities so that thousands of them can be rendered at a time. This, coupled with Unity's version of multithreading - the jobs system, allows for <span style="color: #31BEC3">2396%</span> more efficiency on frames. Each fractal parent spawns n children, with 5 base fractal parents. With the help of ECS and Unity's Jobs system, I was able to maintain 30 FPS with each parent having 8 children, 390625 objects in the scene, all having some sort of basic rotating movement. Without Jobs and ECS I was getting 30FPS with 15625 entities in the scene. </div>
             </div>
 
             <div class = "Item">
@@ -113,6 +113,7 @@
 
             <div class = "Item">
                 <div class = "Item-Header"><a href="https://github.com/DavidJNichol/CollegeStudentSimulator" class = "Item-Link" target="_blank" title="Github Link">College Student Simulator <img class = "GithubImage" src="Images/GitHub-Mark-32px.png" alt="Github Logo"></a></div>
+                <div class = "GameButtonContainer"><a href="StudentSim.html" class = "GameButton"><span>Play Student Sim</span></a></div>
                 <div class = "TagHeader">Tags:
                     <div class = "TagEntries">Unity</div>
                     <div class = "TagEntries">Simulation Games</div>
@@ -196,7 +197,7 @@
                     <img class = "Image" src="Images/Euchre/codeSnip.PNG" alt="">                   
                     <img class = "Image" src="Images/Euchre/CodeSnip2.PNG" alt=""> 
                 </div>
-                <div class = "Item-Description">Card game 'Euchre' made in C++ using Cmake in Linux, and is played through the terminal.</div>              
+                <div class = "Item-Description">Card game 'Euchre' made in C++ using CMake in Linux. Each round there is a shuffle, then cards are dealt in either two per player then three, or three then two cards. Each computer uses a hand ranking algorithm to determine which card is the most valuable for that turn, then plays it. The computer who wins the most turns wins the game.</div>              
             </div>
 
             <div class = "Item">
@@ -212,7 +213,7 @@
                     <img class = "Image" src="Images/BlackJack/BlackJack1.PNG" alt="">                   
                     <img class = "Image" src="Images/BlackJack/BlackJack2.PNG" alt=""> 
                 </div>
-                <div class = "Item-Description">Card game Blackjack made in C++ in Windows, and is played through the terminal.</div>               
+                <div class = "Item-Description">Card game Blackjack made in C++. Cards are shuffled and dealt between a computer dealer and the player. The player then may hit or stand, and once the player decides to stand the dealer's face down card is revealed and the winner is determined.</div>               
             </div>     
         </div>
 
@@ -228,19 +229,13 @@
                     <div class = "TagEntries">Proximity Detection Behaviors</div>
                 </div>
                 <div class = "Date">February 2020</div>
-                <img class = "LargeImg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/638px-Placeholder_view_vector.svg.png" alt=""> 
-                <div class = "Images">
-                    <img class = "Image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/638px-Placeholder_view_vector.svg.png" alt="">                   
-                    <img class = "Image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/638px-Placeholder_view_vector.svg.png" alt=""> 
-                </div>
-                <div class = "Item-Description">3D C# agent AI using Unity’s Navmesh system. Based on a complex decision making tree that encompasses interactions triggered by proximity and sound. Agent behaviors include </div>
-            </div>
-
-            <div class = "VideoContainer">
-                <iframe class = "Video" src="https://www.youtube.com/embed/T9S8hJhrvOc" 
-                title="AI Agent Demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>               
+                <div class = "VideoContainer">
+                    <iframe class = "Video" src="https://www.youtube.com/embed/T9S8hJhrvOc" 
+                    title="AI Agent Demonstration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>   
+                <div class = "Item-Description">3D C# agent AI stealth demo using Unity's Navmesh system. Based on a decision tree that encompasses interactions triggered by proximity and sound. Agent behaviors include seeing, smelling and hearing. Hearing is done with a large box collision radius, but has a lower chance of detection than hearing, where detection is based on a random chance of alerting the agent every second the player is colliding with that box. Smelling detection has a shorter radius but larger chance of detection. Sight is a raycast from the eyes of the agent and has a 100% chance of alerting the agent. Once the agents have been in chasing mode for too long, they go into a resting mode, where they run to a certain area to replenish their energy.</div>
+            </div>            
         </div>
     </body>
 

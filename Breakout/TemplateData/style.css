@@ -41,43 +41,37 @@ body{
     width: 50.5%;
 }
 
+
 .HomeButton{
     border: 2px solid white;
     color:white;
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5vw;
-    width: 70%;
-    padding: 1vw;
     transition: all 400ms ease;
     display: inline-block;
     text-align: center;
-    margin-left: 9vw;
-    margin-right: 13vw;
-    margin-top: -8vw;
     background-color: black;
+    padding: 1vw;
+}
+
+#Home{
+    margin-left: 18%;
 }
 
 .HomeButton:hover{
     transition: all 400ms ease;
-    color: Yellow;
-}
-
-.fullscreen{
-    transform: scale(1.2);
-    display: flex;
-}
-
-.fullscreen:hover{
+    color: #31BEC3;
     cursor: pointer;
-    transform: scale(2);
 }
 
 .Instructions{
     color: white;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1vw;
+    font-size: 1.2vw;
     text-align: center;
     margin-top: -2vw;
-    margin-bottom: 2vw;
+    margin-bottom: .5vw;
+    background-color: black;
+    padding: .5vw;
 }

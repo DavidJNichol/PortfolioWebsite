@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Open+Sans+Condensed:wght@300&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
 
 *{
     caret-color: transparent;
@@ -44,8 +45,8 @@ header{
 
 .HeaderNavItem{
     color: black;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
     padding-top: .2vw;
     margin-top: 5vw;
     padding-bottom: .2vw;
@@ -106,7 +107,7 @@ footer{
 
 .Entry-Header{
     font-family: 'Raleway', sans-serif;
-    font-size: 5vw;
+    font-size: 7vw;
     text-align: center;
     margin-left: 7vw;
     margin-top: 4.5vw;
@@ -115,7 +116,7 @@ footer{
     align-self: center;
     margin-bottom: 4.5vw;
     transition: all 500ms ease;
-    color:white;
+    color:rgb(191,220,205);
 }
 
 .TagHeader{
@@ -123,7 +124,7 @@ footer{
     font-family: 'Saira', sans-serif;
     font-size: 2vw;
     font-weight:500;
-    color:#CADBCC;
+    color:rgb(191,220,205);
 }
 
 .TagEntries{
@@ -161,7 +162,8 @@ footer{
 
 .Item-Link:hover{
     transition: all 500ms ease;
-    transform: scale(.9);
+    margin-left: 5vw;
+    transform: scale(1.1);
 }
 
 .Item-Description{
@@ -201,7 +203,7 @@ a{
     cursor: pointer;
     margin-top: -1.5vw;
     margin-bottom: 1vw;
-    color: white;
+    color: #31BEC3;
     display: inline-block;
 }
 
@@ -222,7 +224,7 @@ a{
 
 .GameButton:hover span{
     padding-right: 1.7vw;
-    color: #31BEC3;
+    color:white;
 }
 
 .GameButton:hover span::after{

@@ -23,45 +23,42 @@ body{
     background-color: black;
 }
 
-.Instructions{
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5vw;
-    text-align: center;
-}
-
-.fullscreen{
-    transform: scale(1.2);
-}
-
-.fullscreen:hover{
-    cursor: pointer;
-}
-
 .HomeButton{
     border: 2px solid white;
     color:white;
     text-decoration: none;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5vw;
-    width: 70%;
-    padding: 1vw;
     transition: all 400ms ease;
     display: inline-block;
     text-align: center;
-    margin-left: 9vw;
-    margin-right: 13vw;
-    margin-top: .5vw;
+    background-color: black;
+    padding: 1vw;
 }
 
-*{
-    padding: 0px;
-    margin: 0px;
+#Home{
+    margin-left: 20%;
 }
 
 .HomeButton:hover{
     transition: all 400ms ease;
-    color: red;
+    color: #31BEC3;
+    cursor: pointer;
+}
+
+.Instructions{
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2vw;
+    text-align: center;
+    margin-top: -1vw;
+    margin-bottom: 2vw;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    caret-color: transparent;
 }
 
 .BackgroundStars1{

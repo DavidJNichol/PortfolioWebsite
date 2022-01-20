@@ -100,9 +100,7 @@ footer{
 
 .PDF{
     margin-top: 2vw;
-    border-bottom: .8vw ridge red;
-    border-right: .8vw ridge yellow;
-    border-left: .8vw ridge blue;
+    margin-left: 2%;
 }
 
 

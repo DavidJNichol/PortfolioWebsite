@@ -56,6 +56,8 @@ body{
     font-family: 'Press Start 2P', cursive;
     font-size: 1.2vw;
     text-align: center;
-    margin-top: -1vw;
-    margin-bottom: 2vw;
+    margin-top: -2vw;
+    margin-bottom: .5vw;
+    background-color: black;
+    padding: .5vw;
 }

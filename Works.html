@@ -197,10 +197,11 @@
                         src="Images/GitHub-Mark-32px.png" alt="Github Logo"></a></div>
             <div class="TagHeader">Tags:
                 <div class="TagEntries">Unity</div>
-                <a href="Blog/ECS.html">
-                    <div class="TagEntries">ECS</div>
-                </a>
+                <a href="Blog/ECS.html"><div class="TagEntries">ECS</div></a>
                 <div class="TagEntries">Multithreading</div>
+                <div class="TagEntries">C#</div>
+                <div class="TagEntries">3D</div>
+                <div class="TagEntries">Solo</div>
             </div>
             <div class="Date">December 2020</div>
             <img class="LargeImg" src="Images/Fractals/Fractals.gif" alt="">
@@ -208,14 +209,21 @@
                 <img class="Image" src="Images/Fractals/JobsTest.gif" alt="">
                 <img class="Image" src="Images/Fractals/WeirdFractal.gif" alt="">
             </div>
-            <div class="Item-Description">Recursive 3D fractal generation in Unity’s early-stage ECS framework, which is
-                an abstraction of Unity GameObjects into ultra lightweight entities so that thousands of them can be
-                rendered at a time. This, coupled with Unity's version of multithreading - the jobs system, allows for
-                <span style="color: #31BEC3">2396%</span> more efficiency on frames. Each fractal parent spawns n
-                children, with 5 base fractal parents. With the help of ECS and Unity's Jobs system, I was able to
-                maintain 30 FPS with each parent having 8 children, 390625 objects in the scene, all having some sort of
-                basic rotating movement. Without Jobs and ECS I was getting 30FPS with 15625 entities in the scene.
-            </div>
+            <div class="Item-Description">
+                <div class="WorkDescription">
+                    <div class="WorkSummary">
+                        3D Fractal generation in Unity's early access <a href="https://unity.com/dots" title="DOTS"> D.O.T.S.</a> framework.
+                        utilizing the lightweight GameObjects of the <a href="https://docs.unity3d.com/Packages/com.unity.entities@0.17/manual/ecs_core.html" title="ECS">ECS</a> 
+                        system and the multithreading of the<a href="https://docs.unity3d.com/Manual/JobSystem.html" title="Jobs"> Jobs</a> systems, I was able to render
+                        390,625 rotating GameObjects in one scene at a steady 30 FPS. (2396% more efficient on frames compared to regular GameObjects)
+                    </div>
+                    <ul>
+                        <li>Entities</li>
+                        <li>Multithreading</li>
+                        <li>Fractal Generation</li>
+                    </ul>
+                </div>
+            </div>    
         </div>
 
         <div class="Item">

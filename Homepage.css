@@ -517,7 +517,7 @@ footer{
     color:rgb(191,220,205);
     font-size: 2vw;
     transition: all 500ms ease;
-    margin-top: 1vw;
+    margin-top: 3vw;
     float: left;
 }
 
@@ -549,7 +549,7 @@ a{
     margin-top: -6.2vw;
     margin-left: 8vw;
 	background: transparent url('img/David.png') 0% 0% no-repeat padding-box;
-    box-shadow: 0px 8px 6px #151617;
+    box-shadow: 1vw -1vw 0 rgb(191,220,205);
 }
 
 .ContactElement{

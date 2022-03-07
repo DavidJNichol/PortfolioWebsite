@@ -126,8 +126,25 @@ footer{
     color: #31BEC3;
 }
 
-a{
-    color: #31BEC3;
+.Image{
+    margin-top: 1vw;
+    border-radius: 12px;
+    transition: all 400ms ease;
+    height: 25vw;
+    width: 50vw;
+    margin-left: 22vw;
+}
+
+.ItemHeader{
+    font-family: 'Raleway', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+    margin-right: 5vw;
+    margin-top: 4.5vw;
+    align-self: center;
+    margin-bottom: 4.5vw;
+    transition: all 500ms ease;
+    color:#31BEC3;
 }
 
 .ContactElement{

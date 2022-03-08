@@ -98,16 +98,24 @@ footer{
     
 }
 
+.BackButton{
+    color: #31BEC3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vw;
+    background-color: #29354B;
+    border-radius: 2vw;
+    padding: .8vw;
+    display: inline-flex;
+}
+
 .Entry-Title{
     font-family: 'Raleway', sans-serif;
     font-size: 7vw;
     text-align: center;
     margin-left: 7vw;
     margin-top: 4.5vw;
-    padding-bottom: .4vw;
     margin-right: 10vw;
     align-self: center;
-    margin-bottom: 4.5vw;
     transition: all 500ms ease;
     color:#FFFFCC;
 }
@@ -126,13 +134,61 @@ footer{
     color: #31BEC3;
 }
 
-.Image{
-    margin-top: 1vw;
+.CaseImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    height: 10%;
+    width: 36%;
+    margin-left: 29vw;
+}
+
+.CodeImage{
     border-radius: 12px;
     transition: all 400ms ease;
     height: 25vw;
+    width: 42vw;
+    margin-left: 25.5vw;
+}
+
+.CodeSmallImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    height: 15vw;
     width: 50vw;
+    margin-left: 21.5vw;
+}
+
+.CodeImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.CodeSmallImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Description{
+    font-family: 'Inter', sans-serif;
+    font-size: 1vw;
+    text-align: center;
+    margin-right: 5vw;
+    margin-top: 1vw;
+    align-self: center;
+    margin-bottom: 1vw;
+    width: 50%;
     margin-left: 22vw;
+    transition: all 500ms ease;
+    color:#c3f7db;
+}
+
+.DescriptionStart{
+    color: #31BEC3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5vw;
+    margin-right: 1vw;
 }
 
 .ItemHeader{
@@ -142,7 +198,7 @@ footer{
     margin-right: 5vw;
     margin-top: 4.5vw;
     align-self: center;
-    margin-bottom: 4.5vw;
+    margin-bottom: 2.5vw;
     transition: all 500ms ease;
     color:#31BEC3;
 }
@@ -183,3 +239,27 @@ footer{
 .SocialMediaEntry:hover{
     filter: invert(0.35) sepia(1) saturate(9.2) hue-rotate(360deg) brightness(1.2);
 }
+
+/* Style the header */
+.header {
+    padding: 10px 16px;
+    background: #555;
+    color: #f1f1f1;
+  }
+  
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+  
+  /* The sticky class is added to the header with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 102px;
+  }

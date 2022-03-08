@@ -27,6 +27,8 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <script src="/CodeExamples.js"></script>
+
     <link rel="shortcut icon" type="image/jpg" href="Images/favicon.ico" />
 </head>
 
@@ -57,16 +59,58 @@
 </header>
 
 <body>
+    <a href="Works.html#Ultra"><div class="BackButton"> Back to Works</div></a>
+
+    <div class="header" id="myHeader">
+        <h2>My Header</h2>
+      </div>
+
     <div class="Entry-Title">Ultra Fall Code Examples</div>
 
     <div class = "Item">
         <div class = "ItemHeader">Procedural Generation</div>
         <div class="Images">
-            <img class="Image" src="Images/UltraFall/Code/Procedural1.PNG" alt="">
-            <img class="Image" src="Images/UltraFall/Code/Procedural2.PNG" alt="">
+            <img class="CaseImage" src="Images/UltraFall/Action Shot 2.png" alt="">
+            <div class = "Description"><div class = "DescriptionStart">The Problem:</div> Blocks and monsters need to be 
+            spawned randomly for less predictable gameplay. These objects cannot be spawned inside of
+                each other and must be within the bounds of the level.
+            </div>
+            <img class="CodeImage" src="Images/UltraFall/Code/Procedural1.PNG" alt="">
+            <div class = "Description"><div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div> Create an abstract class 
+            <span style = "color: #ff0000">Spawner</span> which sets custom bounds and has an amount of objects to spawn. 
+            It sets the transform of the object and instantiates it with a custom prefab. The purpose of the abstract class 
+            is that it increases the modularity of spawning. There are similarities in spawning both monsters and blocks,
+            like needing boundries and an amount of items to spawn. Having monster and block child classes now allow much more 
+            customizability! For example, for a specific type of monster that is stronger than others, you may want to spawn less of them
+            or have them spawn in different bounds. This way you can create an  <span style = "color: #ff0000">ImpSpawner</span> with it's own custom prefab, amount of items,
+            and bounds. Or in the case of blocks, there are gem blocks and regular blocks. We can inject the functionality of a 50% spawn
+            probability within the spawn method of the block spawner child class, as seen below. 
+            </div>
+            <img class="CodeImage" src="Images/UltraFall/Code/Procedural2.PNG" alt="">
         </div>
     </div>
-    
+
+    <div class = "Item">
+        <div class = "ItemHeader">Rigidbody Physics</div>
+        <div class="Images">
+            <img class="CaseImage" src="Images/UltraFall/UltraGIF.gif" alt="">
+            <div class = "Description"><div class = "DescriptionStart">The Problem:</div> To clone the feel of the game 
+            Downwell, movement needs to have a slow but smooth acceleration feel. The player needs to feel springy when jumping
+            and bouncing off of objects in 2D. 
+            </div>
+            <img class="CodeSmallImage" src="Images/UltraFall/Code/Physics3.PNG" alt="">
+            <div class = "Description"><div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div> In order to create the best 'falling' experience
+            I could, I felt a Dynamic Rigidbody rather than Kinematic was necessary on the player as I could use Unity's built in gravity system. 
+            In order to make that feel right though, horizontal movement needed to be smooth as the gravity would impact that as well. After lots of testing and research,
+            I felt Vector2.SmoothDamp created the best feel. 
+            </div>
+            <img class="CodeSmallImage" src="Images/UltraFall/Code/Physics 2.PNG" alt="">
+            <div class = "Description">Using a Dynamic Rigidbody came with some unprecedented challenges with horizontal movement. Thanks to gravity, movement
+                felt like mud. acceleration was so slow that it felt like there was an input delay. But when acceleration was turned up, jumping and falling became way too fast.
+                so, instead of clamping a max force, I added a lesser opposite force once the player reached that max value. This resulted in much floatier
+                jumping and falling which felt great.
+        </div>
+    </div>  
 </body>
 
 <footer>

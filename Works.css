@@ -197,14 +197,13 @@ li{
     background-color: rgba(21, 27, 38, .7);
     padding-left: .5vw;
     padding-right: .5vw;
-    transition: all 500ms ease;
+    transition: all 300ms ease;
     text-decoration: none;
 }
 
 .CodeButton:hover{
-    transition: all 500ms ease;
-    margin-left: 5vw;
-    transform: scale(1.1);
+    transition: all 300ms ease;
+    margin-left: 2vw;
 }
 
 a{

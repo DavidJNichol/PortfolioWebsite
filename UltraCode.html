@@ -27,8 +27,6 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <script src="/CodeExamples.js"></script>
-
     <link rel="shortcut icon" type="image/jpg" href="Images/favicon.ico" />
 </head>
 
@@ -40,8 +38,8 @@
     </div>
 
     <div class="HeaderButton" tabindex="0">
-        <a class="HeaderNavItem" href="index.html" style="text-decoration:none">
-            Home
+        <a class="HeaderNavItem" href="Works.html" style="text-decoration:none">
+            Works
         </a>
     </div>
 
@@ -59,16 +57,12 @@
 </header>
 
 <body>
-    <a href="Works.html#Ultra"><div class="BackButton"> Back to Works</div></a>
-
-    <div class="header" id="myHeader">
-        <h2>My Header</h2>
-      </div>
+    <a href="Works.html#Ultra"><div class="BackButton" id = "BackButton"><span class = "Arrow">&#8592;</span> Back to Works</div></a>
 
     <div class="Entry-Title">Ultra Fall Code Examples</div>
 
     <div class = "Item">
-        <div class = "ItemHeader">Procedural Generation</div>
+        <div class = "ItemHeader" id = "Procedural">Procedural Generation</div>
         <div class="Images">
             <img class="CaseImage" src="Images/UltraFall/Action Shot 2.png" alt="">
             <div class = "Description"><div class = "DescriptionStart">The Problem:</div> Blocks and monsters need to be 
@@ -91,7 +85,7 @@
     </div>
 
     <div class = "Item">
-        <div class = "ItemHeader">Rigidbody Physics</div>
+        <div class = "ItemHeader" id = "Rigid">Rigidbody Physics</div>
         <div class="Images">
             <img class="CaseImage" src="Images/UltraFall/UltraGIF.gif" alt="">
             <div class = "Description"><div class = "DescriptionStart">The Problem:</div> To clone the feel of the game 

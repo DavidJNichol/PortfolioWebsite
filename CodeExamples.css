@@ -94,6 +94,7 @@ body::before {
     background-position: center;
 }
 
+
 footer{
     position: absolute;
     bottom: 0;
@@ -107,11 +108,10 @@ footer{
     font-size: 1.7vw;
     background-color: rgba(41, 53, 75, .4);
     border-radius: 2vw;
-    margin-top: 15%;
+    margin-top: -8%;
     padding-left: .8vw;
     padding-right: .8vw;
     position: fixed;
-    display: inline-flex;
     z-index: 1;
 }
 
@@ -126,7 +126,7 @@ footer{
     font-size: 7vw;
     text-align: center;
     margin-bottom: 4vw;
-    margin-top: -30vw;
+    margin-top: 3vw;
     align-self: center;
     transition: all 500ms ease;
     color:#FFFFCC;
@@ -135,30 +135,15 @@ footer{
 .ItemHeader{
     font-family: 'Raleway', sans-serif;
     font-size: 4vw;
-    margin-top: 2vw;
+    margin-top: 4vw;
     margin-right: 1.5vw;
     text-align: center;
     margin-bottom: 2.5vw;
     color:#31BEC3;
+    z-index: 100;
 }
 
-.CaseImage{
-    border-radius: 12px;
-    transition: all 400ms ease;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-    margin-bottom: 2vw;
-}
-
-.CaseImage:hover{
-    transform: scale(1.4);
-    transition: all 400ms ease;
-    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
-}
-
-.LargerCaseImage{
+.CodeImage{
     border-radius: 12px;
     transition: all 400ms ease;
     display: block;
@@ -168,35 +153,43 @@ footer{
     margin-bottom: 2vw;
 }
 
-.LargerCaseImage:hover{
+.CodeImage:hover{
     transform: scale(1.4);
     transition: all 400ms ease;
     box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
 }
 
-[style*="--aspect-ratio"] > :first-child {
-    width: 100%;
-  }
-  [style*="--aspect-ratio"] > img {  
-    height: auto;
-  } 
-  @supports (--custom:property) {
-    [style*="--aspect-ratio"] {
-      position: relative;
+.CaseImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 2vw;
+}
 
-    }
-    [style*="--aspect-ratio"]::before {
-      content: "";
-      display: block;
-      padding-bottom: calc(100% / (var(--aspect-ratio)));
-    }  
-    [style*="--aspect-ratio"] > :first-child {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-    }  
-  }
+.CaseImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.SmallerCaseImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    margin-bottom: 2vw;
+}
+
+.SmallerCaseImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
 
 .DescriptionContainer{
     width: 100%;
@@ -223,7 +216,7 @@ footer{
     color:#c3f7db;
     padding: 1vw;
     margin-bottom: 2vw;
-    margin-top: 2vw;
+    margin-top: 1vh;
     background-color: rgba(41, 53, 75, .2);
 }
 
@@ -269,24 +262,4 @@ footer{
 
 .SocialMediaEntry:hover{
     filter: invert(0.35) sepia(1) saturate(9.2) hue-rotate(360deg) brightness(1.2);
-}
-
-#FirstWrapper{
-    height: 1105px;
-}
-
-#SecondWrapper{
-    height: 1300px;
-}
-
-#ThirdWrapper{
-    height: 900px;
-}
-
-#FourthWrapper{
-    height: 600px;
-}
-
-#JobsDescription{
-    margin-top: -3vw;
 }

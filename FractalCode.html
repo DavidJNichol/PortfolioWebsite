@@ -56,14 +56,8 @@
     </div>
 </header>
 
-<iframe
-  
-  style="width: 1024px; height: 531px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
-
 <body>
-    <a href="Works.html#Fractals"><div class="BackButton" id = "BackButton"><span class = "Arrow">&#8592;</span> Back to Works</div></a>
+    <a href="Works.html#Fractals"><div class="BackButton"><span class = "Arrow">&#8592;</span> Back to Works</div></a>
 
     <div class="Entry-Title">ECS Fractal Code Examples</div>
 
@@ -71,7 +65,7 @@
         <div class = "Item">
             <div class = "ItemHeader" id = "Entities">Entities</div>
             <div class="Images">
-                <img class="LargerCaseImage" src="Images/Fractals/Code/ECS generation.gif" alt="">
+                <img class="CaseImage" src="Images/Fractals/Code/ECS generation.gif" alt="">
                 <div class = "Description">
                     What you see above is the generation of 100,000 cubes in Unity. Had those been GameObjects, it wouldn't have been
                     possible to smoothly render. The graphics buffer would need to deal with 100,000 mesh renderers, with 100,000 meshes,
@@ -79,15 +73,8 @@
                     is convinient for the machine. This results in vastly higher performance! 
                 </div>
     
-                <div style = "--aspect-ratio: 16/9;" id = "FirstWrapper">
-                    <iframe id = "FirstFrame"
-                        src="https://carbon.now.sh/embed?bg=rgba%280%2C0%2C0%2C0%29&t=base16-dark&wt=bw&l=text%2Fx-csharp&width=1680&ds=true&dsyoff=34px&dsblur=68px&wc=false&wa=true&pv=0px&ph=0px&ln=true&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=1x&wm=false&code=using%2520UnityEngine%253B%250Ausing%2520Unity.Entities%253B%250Ausing%2520Unity.Transforms%253B%250Ausing%2520Unity.Collections%253B%250Ausing%2520Unity.Rendering%253B%250Ausing%2520Unity.Mathematics%253B%250A%250Apublic%2520class%2520Entities%2520%253A%2520MonoBehaviour%250A%257B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520Mesh%255B%255D%2520cubeMesh%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520Material%255B%255D%2520material%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520int%2520amountOfEntities%253B%250A%250A%250A%2520%2520%2520%2520private%2520void%2520Start%28%29%2520%250A%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520EntityManager%2520entityManager%2520%253D%2520World.Active.EntityManager%253B%250A%2509%2509%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F*%2520Define%2520components%2520of%2520enteties%2520**%252F%250A%2520%2520%2520%2520%2520%2520%2520%2520EntityArchetype%2520entityArchetype%2520%253D%2520entityManager.CreateArchetype%28%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520typeof%28Translation%29%252C%2520%252F%252F%2520Loc%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520typeof%28RenderMesh%29%252C%2520%2520%252F%252F%2520Rendering%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520typeof%28LocalToWorld%29%2520%252F%252F%2520Coordinate%2520conversion%2520%28required%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%29%253B%250A%2509%2509%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%252F*%2520array%2520of%2520entities.%2520We%2520use%2520a%2520native%2520array%2520to%2520prevent%2520a%2520multithreading%2520memory%2520leak.**%252F%250A%2520%2520%2520%2520%2520%2520%2520%2520NativeArray%253CEntity%253E%2520entityArray%2520%253D%2520new%2520NativeArray%253CEntity%253E%28amountOfEntities%252C%2520%2509%2509%2520%2520%2509%2509%2509%2509%2509%2520%2520%2520%2520Allocator.Temp%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520entityManager.CreateEntity%28entityArchetype%252C%2520entityArray%29%253B%250A%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520amountOfEntities%253B%2520i%252B%252B%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520Entity%2520entity%2520%253D%2520entityArray%255Bi%255D%253B%2520%252F%252F%2520instantiation%250A%250A%2509%2509%2509%252F**%2520Set%2520data%2520of%2520attached%2520component%2520%27Translation%27%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520X%2520%253D%2520Random%28-500%252C500%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520Y%2520%253D%2520Random%2520%28-100%252C%2520100%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520Z%2520%253D%2520Random%2520%28-500%252C%2520500%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520*%252F%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520entityManager.SetComponentData%28entity%252C%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520new%2520Translation%2520%257B%2520Value%2520%253D%2520new%2520float3%28UnityEngine.Random.Range%28-500f%252C%2520500f%29%252C%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520UnityEngine.Random.Range%28-100f%252C%2520100f%29%252C%2520%28UnityEngine.Random.Range%28-500f%252C%2520500f%29%29%29%2520%257D%29%253B%2520%2520%2520%2520%2520%250A%250A%2509%2509%2509%252F*%2520Set%2520mesh%2520to%2520be%2520a%2520random%2520from%2520a%2520range%2520of%2520meshes%2520that%2520are%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520serialized%2520and%2520declared%2520in%2520editor%2520**%252F%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520entityManager.SetSharedComponentData%28entity%252C%2520new%2520RenderMesh%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520mesh%2520%253D%2520cubeMesh%255BUnityEngine.Random.Range%280%252C%2520cubeMesh.Length%29%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520material%2520%253D%2520material%255BUnityEngine.Random.Range%280%252C%2520material.Length%29%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%29%253B%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520entityArray.Dispose%28%29%253B%2520%252F%252F%2520Garbage%2520Collect%2520array%250A%2520%2520%2520%2520%257D%250A%257D"
-                        width="1024"
-                        height="1305"
-                        frameborder="0"
-                    >
-                    </iframe>
-                </div>
+                <img class="CodeImage" src="Images/Fractals/Code/Example1.png" alt="">
+
                 <div class = "DescriptionContainer">
                     <div class = "Description" id = "ECSDescription"> 
                         This is all the code you need to generate ECS entities. The process goes like this:
@@ -101,32 +88,17 @@
                            <li>Dispose of any Native Arrays you created.</li>
                         </ol>
                        </div>        
-                </div>              
+                </div>
             </div>
         </div>
     
         <div class = "Item">
             <div class = "ItemHeader" id = "Jobs">Multithreading with Jobs</div>
-            <img class="LargerCaseImage" src="Images/Fractals/JobsTest.gif" alt="">
+            <img class="CaseImage" src="Images/Fractals/JobsTest.gif" alt="">
     
-            <div style = "--aspect-ratio: 16/9;" id = "SecondWrapper">
-                <iframe id = "SecondFrame"
-                    src="https://carbon.now.sh/embed?bg=rgba%280%2C0%2C0%2C1%29&t=base16-dark&wt=bw&l=text%2Fx-csharp&width=1680&ds=true&dsyoff=34px&dsblur=68px&wc=false&wa=true&pv=0px&ph=0px&ln=true&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=1x&wm=false&code=using%2520System.Collections.Generic%253B%250Ausing%2520UnityEngine%253B%250Ausing%2520Unity.Jobs%253B%250Ausing%2520Unity.Mathematics%253B%250Ausing%2520Unity.Burst%253B%250Ausing%2520Unity.Collections%253B%250A%250Apublic%2520class%2520Jobs%2520%253A%2520MonoBehaviour%250A%257B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520int%2520amountOfObjects%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520Transform%2520prefabCube%253B%2520%252F%252FInit%2520via%2520inspector%250A%2520%2520%2520%2520private%2520List%253CCubeObject%253E%2520cubeList%253B%250A%250A%2520%2520%2520%2520%252F%252FJOBS%250A%2520%2520%2520%2520%255BBurstCompile%255D%2520%252F%252F%2520this%2520tag%2520activates%2520the%2520burst%2520compiler%2520for%2520this%2520struct%250A%250A%2520%2520%2520%2520%252F*%2520IJobParallelFor%2520contains%2520a%2520method%2520Execute%252C%2520which%2520is%2520the%2520logic%2520that%2520will%2520be%2520%250A%2520%2520%2520%2520%2520asynchronously%2520performed%2520over%2520a%2520fixed%2520number%2520of%2520iterations%2520**%252F%250A%2520%2520%2520%2520public%2520struct%2520ParallelMovementJob%2520%253A%2520IJobParallelFor%2520%250A%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520public%2520NativeArray%253Cfloat3%253E%2520positionArray%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520public%2520NativeArray%253Cfloat%253E%2520moveYArray%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520public%2520float%2520deltaTime%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520public%2520void%2520Execute%28int%2520index%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%252F%252F%2520setting%2520the%2520Y%2520translation%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520positionArray%255Bindex%255D%2520%252B%253D%2520new%2520float3%280%252C%2520moveYArray%255Bindex%255D%2520*%2520deltaTime%252C%25200f%29%253B%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28positionArray%255Bindex%255D.y%2520%253E%25205f%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520moveYArray%255Bindex%255D%2520%253D%2520-math.abs%28moveYArray%255Bindex%255D%29%253B%2520%252F%252F%2520move%2520down%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28positionArray%255Bindex%255D.y%2520%253C%2520-5f%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520moveYArray%255Bindex%255D%2520%253D%2520math.abs%28moveYArray%255Bindex%255D%29%253B%2520%252F%252F%2520move%2520up%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520public%2520class%2520CubeObject%250A%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520public%2520Transform%2520transform%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520public%2520float%2520moveY%253B%250A%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520private%2520void%2520Start%28%29%250A%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520cubeList%2520%253D%2520new%2520List%253CCubeObject%253E%28%29%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520Instantiate%2520and%2520randomly%2520position%2520cubes%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520amountOfObjects%253B%2520i%252B%252B%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520Transform%2520cubeTransform%2520%253D%2520Instantiate%28prefabCube%252C%2520new%2520%2509%2509%2520%2520%2520%2520%2509%2509%2509%2509%2509%2509%2509%2520%2520%2520%2509%2509%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520Vector3%28UnityEngine.Random.Range%28-12f%252C%252025f%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520UnityEngine.Random.Range%28-5f%252C%252030f%29%252C%2520UnityEngine.Random.Range%28-8f%252C%252020f%29%29%252C%2520%2509%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.identity%29%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520cubeList.Add%28new%2520CubeObject%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520transform%2520%253D%2520cubeTransform%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520moveY%2520%253D%2520UnityEngine.Random.Range%281f%252C%25202f%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D"
-                    width="1024"
-                    height="1100"
-                    frameborder="0"
-                >
-                </iframe>
-            </div>
-            <div style = "--aspect-ratio: 16/9;" id = "ThirdWrapper">
-                <iframe id = "ThirdFrame"
-                    src="https://carbon.now.sh/embed?bg=rgba%280%2C0%2C0%2C0%29&t=base16-dark&wt=bw&l=text%2Fx-csharp&width=1024&ds=true&dsyoff=34px&dsblur=68px&wc=false&wa=false&pv=0px&ph=0px&ln=true&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=1x&wm=false&code=%2520%2520%2520%2520void%2520Update%28%29%250A%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520float%2520startTime%2520%253D%2520Time.realtimeSinceStartup%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520Create%2520arrays%2520for%2520copying%2520data%2520into%250A%2520%2520%2520%2520%2520%2520%2520%2520NativeArray%253Cfloat3%253E%2520positionArray%2520%253D%2520new%2520NativeArray%253Cfloat3%253E%28cubeList.Count%252C%2520Allocator.TempJob%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520NativeArray%253Cfloat%253E%2520moveYArray%2520%253D%2520new%2520NativeArray%253Cfloat%253E%28cubeList.Count%252C%2520Allocator.TempJob%29%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520Populate%2520the%2520arrays%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520cubeList.Count%253B%2520i%252B%252B%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520positionArray%255Bi%255D%2520%253D%2520cubeList%255Bi%255D.transform.position%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520moveYArray%255Bi%255D%2520%253D%2520cubeList%255Bi%255D.moveY%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520Create%2520job%2520w.%2520data%250A%2520%2520%2520%2520%2520%2520%2520%2520ParallelMovementJob%2520parallelMovementJob%2520%253D%2520new%2520ParallelMovementJob%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520deltaTime%2520%253D%2520Time.deltaTime%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520positionArray%2520%253D%2520positionArray%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520moveYArray%2520%253D%2520moveYArray%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F**%2520Scheudle%2520Job%2520with%2520an%2520array%2520length%2520batch%2520count%2520of%2520100.%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520*%2520%27array%2520length%27%2520%253D%2520how%2520many%2520times%2520parallelMovementJob.Execute%28%29%2520will%2520run%2520total%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520*%2520%27batch%2520count%27%2520%253D%2520how%2520many%2520times%2520parallelMovementJob.Execute%28%29%2520will%2520run%2520per%2520thread%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520*%252F%250A%2520%2520%2520%2520%2520%2520%2520%2520JobHandle%2520jobHandle%2520%253D%2520parallelMovementJob.Schedule%28cubeList.Count%252C%2520100%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520jobHandle.Complete%28%29%253B%2520%252F%252F%2520Ensure%2520that%2520the%2520job%2520had%2520completed%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520Update%2520to%2520calculated%2520values%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520cubeList.Count%253B%2520i%252B%252B%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520cubeList%255Bi%255D.transform.position%2520%253D%2520positionArray%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520cubeList%255Bi%255D.moveY%2520%253D%2520moveYArray%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520%252F%252F%2520Dispose%2520arrays%250A%2520%2520%2520%2520%2520%2520%2520%2520positionArray.Dispose%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520moveYArray.Dispose%28%29%253B%250A%2520%2520%2520%2520%257D%250A%257D"
-                    width="1024"
-                    height="1100"
-                    frameborder="0"
-                >
-                </iframe>
-            </div>
+            <img class="CodeImage" src="Images/Fractals/Code/Example2.png" alt="">
+
+            <img class="CodeImage" src="Images/Fractals/Code/Example3.png" alt="">
             <div class = "DescriptionContainer">
                 <div class = "Description" id = "JobsDescription"> 
                     Unity's Job system is simple. At it's core, you have a struct that inherits from  with an execute method. 
@@ -144,20 +116,12 @@
             </div>
         </div> 
         
-        <div class = "Item">
+        <div class = "Item" id = "FractalGen">
             <div class = "ItemHeader" id = "Fractals">Creating Fractals with ECS and Jobs</div>
 
-            <img class="LargerCaseImage" src="Images/Fractals/JobsTest.gif" alt="">
+            <img class="CaseImage" src="Images/Fractals/Code/Fractal3.gif" alt="">
 
-            <div style = "--aspect-ratio: 16/9;" id = "FourthWrapper">
-                <iframe id = "FourthFrame"
-                src="https://carbon.now.sh/embed?bg=rgba%280%2C0%2C0%2C0%29&t=base16-dark&wt=bw&l=text%2Fx-csharp&width=1105&ds=true&dsyoff=31px&dsblur=68px&wc=false&wa=false&pv=0px&ph=0px&ln=true&fl=1&fm=Hack&fs=14px&lh=137%25&si=false&es=1x&wm=false&code=using%2520UnityEngine%253B%250Ausing%2520Unity.Entities%253B%250Ausing%2520Unity.Transforms%253B%250Ausing%2520Unity.Collections%253B%250Ausing%2520Unity.Rendering%253B%250Ausing%2520Unity.Mathematics%253B%250A%250Apublic%2520class%2520FractalECS%2520%253A%2520MonoBehaviour%250A%257B%250A%2520%2520%2520%2520%2523region%2520Editor%2520Serialization%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520Mesh%255B%255D%2520cubeMesh%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520Material%2520material%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520int%2520maxDepth%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520float%2520childScale%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520int%2520maxTwist%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520bool%2520rotation%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520private%2520bool%2520weirdFractal%253B%250A%2520%2520%2520%2520%255BSerializeField%255D%2520public%2520float%2520radiansPerSecond%253B%250A%2520%2520%2520%2520%2523endregion%250A%250A%2520%2520%2520%2520%2523region%2520ECS%2520basic%2520elements%250A%2520%2520%2520%2520private%2520NativeArray%253CEntity%253E%2520entityArray%253B%250A%2520%2520%2520%2520private%2520EntityArchetype%2520entityArchetype%253B%250A%2520%2520%2520%2520private%2520EntityManager%2520entityManager%253B%250A%2520%2520%2520%2520private%2520Entity%2520parentScale%253B%250A%2520%2520%2520%2520private%2520Entity%2520parent%253B%250A%2520%2520%2520%2520%2523endregion%250A%2520%2520%2520%2520%250A%2520%2520%2520%2520%2523region%2520Spawning%2520Enitities%250A%2520%2520%2520%2520private%2520const%2520int%2520CHILD_COUNT%2520%253D%25205%253B%250A%2520%2520%2520%2520private%2520float3%2520newLoc%253B%250A%2520%2520%2520%2520private%2520float4x4%2520loc%253B%250A%2520%2520%2520%2520private%2520float3%2520entityPosition%253B%250A%2520%2520%2520%2520private%2520int%2520amountOfEntities%253B%250A%2520%2520%2520%2520private%2520int%2520depth%253B%250A%2520%2520%2520%2520private%2520int%2520directionIndex%253B%250A%2520%2520%2520%2520private%2520quaternion%2520startOrientation%253B%250A%2520%2520%2520%2520%2523endregion%250A%250A%2520%2520%2520%2520private%2520Material%255B%252C%255D%2520materials%253B%2520%252F%252F%2520Color%250A%2520%2520%2520%2520private%2520int%2520entitiesCreated%253B%2520%252F%252F%2520Indexing%250A%2520%2520%2520%2520private%2520float%2520startTime%253B%2520%252F%252F%2520Debug%2520StartupTime%250A%2520%2520%250A%2520%2520%2520%2520private%2520static%2520Vector3%255B%255D%2520childDirections%2520%253D%2520%257B%2520%2520%252F%252F%2520Iterative%2520directions%250A%2520%2520%2520%2520%2520%2520%2520%2520Vector3.right%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Vector3.left%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Vector3.up%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Vector3.down%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Vector3.forward%252C%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520Vector3.back%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%257D%253B%250A%250A%2520%2520%2520%2520private%2520static%2520quaternion%255B%255D%2520childOrientations%2520%253D%2520%257B%2520%2520%252F%252F%2520Initial%2520oritentation%2520of%2520cubes%250A%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.identity%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.Euler%280f%252C%25200f%252C%2520-90f%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.Euler%280f%252C%25200f%252C%252090f%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.Euler%2890f%252C%25200f%252C%25200f%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.Euler%28-90f%252C%25200f%252C%25200f%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520Quaternion.Euler%280f%252C%252090f%252C%25200f%29%250A%2520%2520%2520%2520%257D%253B"
-                width="1024"
-                height="1100"
-                frameborder="0"
-                >
-                </iframe>
-            </div>
+            <img class="CodeImage" src="Images/Fractals/Code/Example4.png" alt=""> 
            
             <div class = "DescriptionContainer">
                 <div class = "Description" id = "FractalDescription"> 
@@ -170,15 +134,15 @@
                 </div>
             </div> 
             
-            <img class="CaseImage" src="Images/Fractals/Code/Fractal0.PNG" alt="">
+            <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal0.PNG" alt="">
             <div class = "Caption"><em>Fractal Tree Generator by Andrew Herman <a href="https://codepen.io/hippiefuturist/full/NRWOxM">ashmystic.com</a></em></div>
             <div class = "DescriptionContainer">
                 <div class = "Description" id = "FractalDescription"> 
                     Here is a fractal tree with 5 branches (children) per generation (parent). Num Entities = 5^2 = 25.
                 </div>
-            </div> 
+            </div>
             
-            <img class="CaseImage" src="Images/Fractals/Code/Fractal3.PNG" alt="">
+            <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal3.PNG" alt="">
             <div class = "Caption"><em>Fractal Tree Generator by Andrew Herman <a href="https://codepen.io/hippiefuturist/full/NRWOxM">ashmystic.com</a></em></div>
             <div class = "DescriptionContainer">
                 <div class = "Description" id = "FractalDescription"> 
@@ -186,9 +150,113 @@
                     That is the number of entities we will be creating for this demonstration. Without ECS and Jobs, the GPU would surely have
                     a meltdown!
                 </div>
-            </div> 
+            </div>
 
+            <img class="CodeImage" src="Images/Fractals/Code/Example5.png" alt="">
+
+            <div class = "DescriptionContainer">
+                <div class = "Description" id = "FractalDescription"> 
+                    To start setting up our fractal, we declare a total amount of enteties, which is equal to the number of generations and children
+                    per generation. Then we set up a native array to store our enteties. We instantiate our EntityManager and EntityArchetype to create components 
+                    that will modify the behaviors of the entity. Then we set the materials, set a starting location, and call our method that will spawn entities.
+                    The breakdown for that is shown below.
+                </div>
+            </div>
          </div>  
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example6.png" alt="">
+
+         <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                We start by setting a default scale for our entities, then use the standard entityManager.CreateEntity() method to instantiate an entity. The overload
+                that I used here takes in an EntityArchetype and NativeArray of type Entity. There is an overload that takes just an EntityArchetype and one that takes
+                none. Again, EntityArchetype refers to what I would describe as a container of behavior modifications ("Components") that make up each entity. I define those 
+                "Components" later in the code. Because I passed in a nativearray, I only need to call CreateEntity once because it will repeat until the array is at it's end.
+                next, I instantiate a variable I use for indexing child orientation directions. Next I create an entity to use as a reference and set it to the existing
+                entity in the array that was created by CreateEntity(). Below that I determine the child scale and a "parent" variable I use to get the previous entity's 
+                properites. What I did was create a parent every 5th index at the start of each 'generation.' Below that i set a scale reference that is equal to the
+                parent's scale * the child scale, which in this case is 0.5. Lastly, I call InterpolateColor(), shown below.
+            </div>
+        </div>
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example7.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                What this method does is iterate a depth value which is used to modify the color of the material in the method 
+                shown below:
+            </div>
+        </div>
+        
+        <img class="CodeImage" src="Images/Fractals/Code/Example8.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                This is where we have a nice color transition from white, to yellow, to cyan, to red and then magenta in a random order. 
+                This randomness is just an interesting way for the fractals to be unique and have some variation. 
+                we set our lerp t value to increase as maxDepth increases, and then square it so we get a nice "ease in ease out" 
+                parabolic wave of color.
+            </div>
+        </div>
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example9.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                Next, we start by setting up our components for our entities. The first SetComponentData() method
+                sets data for a custom class I created called FractalComponent, which you'll see is used for rotation 
+                later. We declare our required LocalToWorld value and set it to loc, which contains the location that
+                we want our fractals to start spawning. This next part is where things get interesting. We fill a 
+                variable called 'newLoc' which is being set to the parent's position. Then we add to that based on depth
+                and a variable called offset, which slowly increases. Thus, the position of the child fractals increase
+                more and more outward per generation. This is where the heart of the fractal algorithm lies. Just by 
+                modifying newLoc slightly, you can get wildly different fractals, which you'll see below. After that,
+                we set the rotation, scale, and mesh components, and OffsetEntitySpawn is another optional variation which 
+                makes the fractal stretch backward on the z axis by X units. Then we iterate direction so the next fractal
+                spawns in a different orientation. Next, we need to rotate these entities. We don't need to, but why not
+                squeeze every bit of performance we can? Let's multithread that with Jobs.
+            </div>
+        </div>
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example10.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                Enter: asynchronous rotation. It's actually more simple than you would expect. 
+                This implementation is different from the example I showed above however. It uses IJobForEach, 
+                which takes in a number of components. Specifically Rotation, Fractal Component (custom class), and LocalToWorld.
+                Within our required Execute() method, we change the value of the reference to rotation's component. We get that by
+                multiplying the current normalized rotation by FractalComponent.radiansPerSecond * deltaTime, which is set in FractalECS.cs
+                on line 133. Vector3.right means the entity rotates on the X axis. 
+                After that, we setup our required protected override JobHandle OnUpdate() method. There we set up our FractalJobSystem 
+                that contains our rotation logic that we wrote above, and gets our deltaTime value. The reason why we have to obtain this 
+                in OnUpdate when we declare our Job is simply because anything that lives inside that FractalJobSystem struct will be computed
+                asynchronously, which would make Time.deltaTime innacurate due to the logic not needing a specific execution order. 
+                I made a demonstration of this below.
+            </div>
+        </div>
+
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Demonstration.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                That completes this walkthrough of ECS! Fractals are so fascinating, and with ECS and Jobs it's possible
+                to visualize them in 3D! I think that's amazing. It's very fun to experiment with different meshes, colors
+                and positions. Thank you for making it this far and checking out my 
+                work. If you have the time, please check out my other <a href="Works.html">works.</a> Also, feel free to reach out
+                to me at any time if you have any questions about this project! I'll leave you with some
+                examples of fractals I have created with my code.
+            </div>
+        </div>
+
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal1.gif" alt="">
+        <div class = "Caption"><em>The three arches</em></div>
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal2.gif" alt="">
+        <div class = "Caption"><em>Convex</em></div>
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/FractalImage1.PNG" alt="">
+        <div class = "Caption"><em>Parabola</em></div>
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal0.gif" alt="">
+        <div class = "Caption"><em>Circles</em></div>
     </div>
 </body>
 

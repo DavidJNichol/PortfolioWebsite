@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UltraFall Code Examples</title>
-    <link rel="stylesheet" href="CodeExamples.css">
+    <link rel="stylesheet" href="UltraCodeExamples.css">
 
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -69,7 +69,7 @@
             spawned randomly for less predictable gameplay. These objects cannot be spawned inside of
                 each other and must be within the bounds of the level.
             </div>
-            <img class="CodeImage" src="Images/UltraFall/Code/Procedural1.PNG" alt="">
+            <img class="CodeImage" src="Images/UltraFall/Code/Example1.png" alt="">
             <div class = "Description"><div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div> Create an abstract class 
             <span style = "color: #ff0000">Spawner</span> which sets custom bounds and has an amount of objects to spawn. 
             It sets the transform of the object and instantiates it with a custom prefab. The purpose of the abstract class 
@@ -80,7 +80,7 @@
             and bounds. Or in the case of blocks, there are gem blocks and regular blocks. We can inject the functionality of a 50% spawn
             probability within the spawn method of the block spawner child class, as seen below. 
             </div>
-            <img class="CodeImage" src="Images/UltraFall/Code/Procedural2.PNG" alt="">
+            <img class="CodeImage" src="Images/UltraFall/Code/Example2.png" alt="">
         </div>
     </div>
 
@@ -92,13 +92,13 @@
             Downwell, movement needs to have a slow but smooth acceleration feel. The player needs to feel springy when jumping
             and bouncing off of objects in 2D. 
             </div>
-            <img class="CodeSmallImage" src="Images/UltraFall/Code/Physics3.PNG" alt="">
+            <img class="CodeImage" src="Images/UltraFall/Code/Example3.png" alt="">
             <div class = "Description"><div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div> In order to create the best 'falling' experience
             I could, I felt a Dynamic Rigidbody rather than Kinematic was necessary on the player as I could use Unity's built in gravity system. 
             In order to make that feel right though, horizontal movement needed to be smooth as the gravity would impact that as well. After lots of testing and research,
             I felt Vector2.SmoothDamp created the best feel. 
             </div>
-            <img class="CodeSmallImage" src="Images/UltraFall/Code/Physics 2.PNG" alt="">
+            <img class="CodeImage" src="Images/UltraFall/Code/Example4.png" alt="">
             <div class = "Description">Using a Dynamic Rigidbody came with some unprecedented challenges with horizontal movement. Thanks to gravity, movement
                 felt like mud. acceleration was so slow that it felt like there was an input delay. But when acceleration was turned up, jumping and falling became way too fast.
                 so, instead of clamping a max force, I added a lesser opposite force once the player reached that max value. This resulted in much floatier

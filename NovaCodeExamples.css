@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Lora:ital@1&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=EB+Garamond&family=Hubballi&family=Inter:wght@300&family=Josefin+Slab:wght@500&family=Kite+One&family=PT+Sans&family=Raleway:wght@200&family=Roboto+Condensed:wght@300&family=Saira:wght@300&display=swap');
+
+*{
+    caret-color: transparent;
+}
+
+a{
+    color: #31BEC3;
+}
+
+header{
+    display:flex;
+    background-color: rgb(191,220,205);
+    position: relative;
+    margin-left: -.74vw;
+    width: 101.2%;
+    margin-top: -4vw;
+}
+
+.LogoContainer{
+    width: 50%;
+}
+
+.Logo{
+    height: 5vw;
+    width: 8vw;
+}
+
+.Logo:hover{
+    filter: invert(0.18)
+}
+
+.Name{
+    font-family: 'Sorts Mill Goudy', serif;
+    font-family: 'Gruppo', cursive;
+    font-size: 4vw;
+    display: inline-block;
+    margin-top: 4.2vw;
+    margin-left: 2vw;
+    color: black;
+    margin-bottom: 1.5vw;
+}
+
+.HeaderNavItem{
+    color: black;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: .2vw;
+    margin-top: 5vw;
+    padding-bottom: .2vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2vw;
+    border-radius: 20px;
+    transition: all 400ms ease;
+}
+
+.HeaderButton{
+    height: 20%;
+    display: flex;
+    border-radius:0.12em;
+    font-weight:300;
+    margin-left: 3vw;
+    cursor: pointer;
+}
+
+.HeaderNavItem:hover{
+    color:#FFFFFF;
+    transition: all 400ms ease;
+    background-color: #000000;
+}
+
+body{
+    position: relative;
+}
+
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #29354B;
+    background-image: url("Images/Background_Pattern.png"), linear-gradient(#29354B, #080B0F); /* W3C */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;  
+}
+
+.BackButton{
+    color: #31BEC3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.7vw;
+    background-color: rgba(41, 53, 75, .4);
+    border-radius: 2vw;
+    margin-top: 3%;
+    margin-left: 2%;
+    padding-left: .8vw;
+    padding-right: .8vw;
+    position: fixed;
+    z-index: 1;
+}
+
+.Arrow{
+    font-size: 1.5vw;
+    align-self: center;
+    margin-right: .5vw;
+}
+
+.Entry-Title{
+    font-family: 'Raleway', sans-serif;
+    font-size: 7vw;
+    text-align: center;
+    margin-bottom: 4vw;
+    margin-top: 3vw;
+    align-self: center;
+    transition: all 500ms ease;
+    color:#FFFFCC;
+}
+
+.ItemHeader{
+    font-family: 'Raleway', sans-serif;
+    font-size: 4vw;
+    margin-top: 4vw;
+    margin-right: 1.5vw;
+    text-align: center;
+    margin-bottom: 2.5vw;
+    color:#31BEC3;
+    z-index: 100;
+}
+
+.CodeImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 2vw;
+}
+
+.CodeImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.CaseImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 2vw;
+}
+
+.CaseImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.SmallerCaseImage{
+    border-radius: 12px;
+    transition: all 400ms ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    margin-bottom: 2vw;
+}
+
+.SmallerCaseImage:hover{
+    transform: scale(1.4);
+    transition: all 400ms ease;
+    box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+.DescriptionContainer{
+    width: 100%;
+}
+
+.Caption{
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: .9vw;
+    margin-right: 50%;
+    margin-top: -.5vw;
+    margin-bottom: 1vw;
+    text-align: center;
+    color:#c3f7db;
+}
+
+.Description{
+    font-family: 'Inter', sans-serif;
+    font-size: 1vw;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    transition: all 500ms ease;
+    color:#c3f7db;
+    padding: 1vw;
+    margin-bottom: 2vw;
+    margin-top: 1vh;
+    background-color: rgba(41, 53, 75, .2);
+}
+
+.DescriptionStart{
+    color: #31BEC3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+
+.ContactElement{
+    margin-top: 10vw;
+    margin-left: 6.5vw;
+    margin-bottom: 2vw;
+    margin-right: 3.5vw;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+    color: #CADBCC
+}
+
+.ContactEntry{
+    font-size: 1.7vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-weight: bold;
+}
+
+.SocialMediaElement{
+    display: inline-block;
+    vertical-align:middle;
+    margin-top: 8vw;
+    filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);
+}
+
+.SocialMediaEntry{
+    margin-top: 1vw;
+    height: 3vw;
+    width: 3vw;
+    margin-left: 11.5vw;
+    margin-bottom: 1vw;
+}
+
+.SocialMediaEntry:hover{
+    filter: invert(0.35) sepia(1) saturate(9.2) hue-rotate(360deg) brightness(1.2);
+}

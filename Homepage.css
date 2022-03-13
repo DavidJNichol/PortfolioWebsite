@@ -517,7 +517,7 @@ footer{
     color:rgb(191,220,205);
     font-size: 2vw;
     transition: all 500ms ease;
-    margin-top: 3vw;
+    margin-top: 2vw;
     float: left;
 }
 
@@ -553,7 +553,7 @@ a{
 }
 
 .ContactElement{
-    margin-top: -1vw;
+    margin-top: 1vw;
     margin-left: 6.5vw;
     margin-right: 3.5vw;
     display: inline-block;
@@ -570,7 +570,7 @@ a{
 }
 
 .SocialMediaElement{
-    margin-top: -1vw;
+    margin-top: 1vw;
     display: inline-block;
     vertical-align:middle;
     filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);

@@ -18,10 +18,15 @@
       <div class="footer">
       </div>
 
-      <div class = "Instructions">WASD or Arrow Keys to Move, Space to Shoot, ESC to Pause</div>
+      <div class = "Instructions">
+          Mouse to look around, WASD to move. Press Esc to show mouse cursor. The agents will enter a chase state if they
+          hear, see or smell you. They eventually need to rest and will run back to their tombstone to regenerate energy.
+      </div>
 
-      <a href = "Works.html" class = "HomeButton" id = "Home">Back To Works</a>
-      <div class = "HomeButton" onclick="unityInstance.SetFullscreen(1)">Fullscreen</div>
+      <div class = "ButtonContainer">
+        <a href = "Works.html" class = "HomeButton" id = "Home">Back To Works</a>
+        <div class = "HomeButton" onclick="unityInstance.SetFullscreen(1)">Fullscreen</div>
+      </div>    
     </div>
   </body>
 </html>

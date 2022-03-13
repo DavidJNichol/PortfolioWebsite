@@ -143,9 +143,8 @@
                     <div class="DescriptionHeader">Worked on:</div>
                     <ul>
                         <li>Tech Lead</li>
-                        <li>Integration of a custom spline editorfor simulated flight path </li>
-                        <li>Smooth movement along a path with
-                            custom ease in-ease out algorithm</li>
+                        <li>Integration of a custom spline editor for simulated flight path </li>
+                        <li>Smoothed movement along a spline to reduce sim sickness</li>
                         <li>General optimization for VR</li>
                     </ul>
                 </div>
@@ -225,6 +224,53 @@
                 </div>
             </div>    
         </div>
+
+        <div class="Item">
+            <div class="Item-Header" id="Navmesh">Navmesh Pathfinding AI Agents</div>
+                <a href="https://github.com/DavidJNichol/AStarPathfindingUnity"
+                    class="Item-Link" id = "SubHeader" target="_blank" title="Github Link">See on Github<img class="GithubImage" src="Images/GitHub-Mark-32px.png" alt="Github Logo"></a>     
+                    <div class="GameButtonContainer"><a href="Pathfinding.html" target="_blank" rel="noopener noreferrer"
+                        class="TagEntries"><span>Click Here to
+                                Play</span></a></div>    
+                <div class="TagHeader">Tags:
+                <div class="TagEntries">C#</div>
+                <div class="TagEntries">Unity</div>
+                <div class="TagEntries">Navmesh</div>
+                <div class="TagEntries">A* Pathfinding</div>
+                <div class="TagEntries">Solo</div>
+            </div>
+            <div class="Date">February 2020</div>
+            <div class="VideoContainer">
+                <iframe class="Video" src="https://www.youtube.com/embed/T9S8hJhrvOc" title="AI Agent Demonstration"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="Images">
+                <img class="Image" src="Images/Pathfinding/AI1.png" alt="">
+                <img class="Image" src="Images/Pathfinding/Navmesh1.PNG" alt="">
+            </div>
+
+            <div class="Item-Description">
+                <div class="WorkDescription">
+                    <div class="WorkSummary">3D C# agent AI stealth demo using Unity's Navmesh system. Based on a decision
+                        tree that encompasses interactions triggered by proximity and sound.
+                    </div> 
+                    <div class="WorkSummary">
+                        Agent behaviors include seeing,
+                        smelling and hearing. Hearing is done with a large box collision radius, but has a lower chance of
+                        detection than hearing, where detection is based on a random chance of alerting the agent every second
+                        the player is colliding with that box.
+                    </div>
+                    <div class="WorkSummary">
+                        Smelling detection has a shorter radius but larger chance of
+                        detection. Sight is a raycast from the eyes of the agent and has a 100% chance of alerting the agent.
+                        Once the agents have been in chasing mode for too long, they go into a resting mode, where they run to a
+                        certain area to replenish their energy.
+                    </div>
+                </div>
+            </div>      
+        </div>
         
         <div class="Item">
             <div class="Item-Header" id="Breakout">Breakout</div>
@@ -246,12 +292,24 @@
                 <img class="Image" src="Images/Breakout/BODemo1.gif" alt="">
                 <img class="Image" src="Images/Breakout/Image3.png" alt="">
             </div>
-            <div class="Item-Description">Tasked with the challenged of recreating the Atari game 'Breakout' with two
-                new mechanics, I went for a slingshot and time slow to spice things up. Created first in Monogame's C#
-                engine then in Unity. The playable version is the Unity one. Fun fact: each ball reflection has a random
-                amount of entropy between 0 and .1 positive or negative Unity units added to it's direction when
-                colliding with an object to keep each bounce slightly unpredictable.</div>
-        </div>
+
+            <div class="Item-Description">
+                <div class="WorkDescription">
+                    <div class="WorkSummary">
+                        Tasked with the challenged of recreating the Atari game 'Breakout' with two
+                        new mechanics, I went for a slingshot and time slow to spice things up. Created first in Monogame's C#
+                        engine then in Unity. The playable version is the Unity one. 
+                    </div>
+                    <div class="WorkSummary">
+                        Fun fact: each ball reflection has a random
+                        amount of entropy between 0 and .1 positive or negative Unity units added to it's direction when
+                        colliding with an object to keep each bounce slightly unpredictable.
+                    </div>
+                </div>
+            </div>
+                
+
+            
     
         <div class="Item">
             <div class="Item-Header" id="Sim">College Student Simulator</div>
@@ -372,38 +430,6 @@
                 created team, set up match details, and displays randomized results of that match as well as team stats.
                 Entirely save and loadable.</p>
         </div>
-        
-    <div class="Item">
-        <div class="Item-Header" id="Navmesh">Navmesh Pathfinding Agents</div>
-            <a href="https://github.com/DavidJNichol/FinalProject"
-                class="Item-Link" id = "SubHeader" target="_blank" title="Github Link">See on Github<img class="GithubImage" src="Images/GitHub-Mark-32px.png" alt="Github Logo"></a>     
-                <div class="GameButtonContainer"><a href="Pathfinding.html" target="_blank" rel="noopener noreferrer"
-                    class="TagEntries"><span>Click Here to
-                            Play</span></a></div>    
-            <div class="TagHeader">Tags:
-            <div class="TagEntries">C#</div>
-            <div class="TagEntries">Unity</div>
-            <div class="TagEntries">Navmesh</div>
-            <div class="TagEntries">Proximity Detection Behaviors</div>
-            <div class="TagEntries">Solo</div>
-        </div>
-        <div class="Date">February 2020</div>
-        <div class="VideoContainer">
-            <iframe class="Video" src="https://www.youtube.com/embed/T9S8hJhrvOc" title="AI Agent Demonstration"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </div>
-        <div class="Item-Description">3D C# agent AI stealth demo using Unity's Navmesh system. Based on a decision
-            tree that encompasses interactions triggered by proximity and sound. Agent behaviors include seeing,
-            smelling and hearing. Hearing is done with a large box collision radius, but has a lower chance of
-            detection than hearing, where detection is based on a random chance of alerting the agent every second
-            the player is colliding with that box. Smelling detection has a shorter radius but larger chance of
-            detection. Sight is a raycast from the eyes of the agent and has a 100% chance of alerting the agent.
-            Once the agents have been in chasing mode for too long, they go into a resting mode, where they run to a
-            certain area to replenish their energy.
-        </div>
-    </div>
 </body>
 <footer>
     <div class = "ContactElement">

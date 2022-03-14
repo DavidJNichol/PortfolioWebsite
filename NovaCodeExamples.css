@@ -102,6 +102,32 @@ footer{
     height: 2.5rem;  
 }
 
+.VideoContainer{
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 2vw;
+    height: 25vw;
+    margin-bottom: 2vw;
+    width: 100%;
+}
+
+.Video{
+    position: absolute;
+    top: 0vw;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+a{
+    text-decoration: none;
+}
+
 .BackButton{
     color: #31BEC3;
     font-family: 'Raleway', sans-serif;

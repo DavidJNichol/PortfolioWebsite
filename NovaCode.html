@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Nova Code Examples</title>
-    <link rel="stylesheet" href="CodeExamples.css">
+    <link rel="stylesheet" href="NovaCodeExamples.css">
 
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -57,54 +57,215 @@
 </header>
 
 <body>
-    <a href="Works.html#Ultra"><div class="BackButton" id = "BackButton"><span class = "Arrow">&#8592;</span> Back to Works</div></a>
+    <div class="Entry-Title">Project Nova Code Examples</div>
 
-    <div class="Entry-Title">Ultra Fall Code Examples</div>
+    <a href="Works.html#Nova"><div class="BackButton"><span class = "Arrow">&#8592;</span> Back to Works</div></a>
 
-    <div class = "Item">
-        <div class = "ItemHeader" id = "Procedural">Procedural Generation</div>
-        <div class="Images">
-            <img class="CaseImage" src="Images/UltraFall/Action Shot 2.png" alt="">
-            <div class = "Description"><div class = "DescriptionStart">The Problem:</div> Blocks and monsters need to be 
-            spawned randomly for less predictable gameplay. These objects cannot be spawned inside of
-                each other and must be within the bounds of the level.
+    <div class="Entry">
+        <div class="Item">
+            <div class="ItemHeader" id="Weapon">Weapon System</div>
+            <div class="VideoContainer">
+                <iframe class = "Video" width="560" height="315" src="https://www.youtube.com/embed/Mw_Uq2rq2DU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <img class="CodeImage" src="Images/UltraFall/Code/Procedural1.PNG" alt="">
-            <div class = "Description"><div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div> Create an abstract class 
-            <span style = "color: #ff0000">Spawner</span> which sets custom bounds and has an amount of objects to spawn. 
-            It sets the transform of the object and instantiates it with a custom prefab. The purpose of the abstract class 
-            is that it increases the modularity of spawning. There are similarities in spawning both monsters and blocks,
-            like needing boundries and an amount of items to spawn. Having monster and block child classes now allow much more 
-            customizability! For example, for a specific type of monster that is stronger than others, you may want to spawn less of them
-            or have them spawn in different bounds. This way you can create an  <span style = "color: #ff0000">ImpSpawner</span> with it's own custom prefab, amount of items,
-            and bounds. Or in the case of blocks, there are gem blocks and regular blocks. We can inject the functionality of a 50% spawn
-            probability within the spawn method of the block spawner child class, as seen below. 
+            <div class="Description">
+                <div class = "DescriptionStart">The Problem:</div>
+                Because we wanted make ammo a precious resource like in Resident Evil, we knew we needed to create
+                a weapon system that lets the player swap back and forth from melee to gun. Each gun needed 
+                bloom, recoil, reloading and aiming. The guns need to have IK and other animations and
+                the player needs to be able to cancel them on the fly. Finally, we needed to have an accurate hitscan.
             </div>
-            <img class="CodeImage" src="Images/UltraFall/Code/Procedural2.PNG" alt="">
+    
+            <img class="SmallerCaseImage" src="Images/Nova/Code/UML.PNG" alt="">
+    
+            <div class="DescriptionContainer">
+                <div class="Description">
+                    <div class = "DescriptionStart" style = "color: #FFFFCC">The Solution: The Strategy Pattern</div>                   
+                    To start, we created an AWeapon class which implements the IInteractiveObject interface 
+                    <a href="NovaCode.html#Interactive">(see lightweight interactive object system)</a>.        
+                    The AMeleeWeapon and AGun classes inherit from AWeapon. This way, all the 
+                    <a href="https://github.com/Project-Nova-Team/Project-Nova/blob/main/Source/ProjectNova/Weapon/CombatComponent.cpp">UCombatComponent</a>
+                    needs to know when a swap input is fired is that it's swapping to a weapon. It doesn't need to know 
+                    anything about recoil, damage or anything weapon type specific! Scroll wheel swapping can register
+                    a lot of input events within a short amount of time, so having the function as light as possible is 
+                    certainly optimal.                         
+                </div>
+            </div>
         </div>
+
+        <img class="CodeImage" src="Images/Nova/Code/Example1.png" alt="">
+        <img class="CodeImage" src="Images/Nova/Code/Example2.png" alt="">
+
+        <div class="Description">
+            When we swap weapons, we first need to check if we have more than one weapon or if we are 
+            locked out of animation, which just checks if an animation is currently playing or
+        </div>
+    
+        <div class = "Item">
+            <div class = "ItemHeader" id = "Jobs">Multithreading with Jobs</div>
+            <img class="CaseImage" src="Images/Fractals/JobsTest.gif" alt="">
+    
+            <img class="CodeImage" src="Images/Fractals/Code/Example2.png" alt="">
+
+            <img class="CodeImage" src="Images/Fractals/Code/Example3.png" alt="">
+            <div class = "DescriptionContainer">
+                <div class = "Description" id = "JobsDescription"> 
+                    Unity's Job system is simple. At it's core, you have a struct that inherits from  with an execute method. 
+                    Any logic you want to be multithreaded goes in that method. Then, .Schedule() the struct and specify
+                    arrayLength and innerloopBatchCount.  
+                     <ol>
+                        <li>Declare a struct that inherits from IJobParallelFor with public void Execute(int index)</li>
+                        <li>Fill that method with logic that will be computed asynch.</li>
+                        <li>Instantiate that struct and any members it has.</li>
+                        <li>Schedule the Job.</li>
+                        <li>Don't forget to use NativeArrays. If you do, dispose of them when you're done.</li>
+        
+                     </ol>
+                </div>
+            </div>
+        </div> 
+        
+        <div class = "Item" id = "FractalGen">
+            <div class = "ItemHeader" id = "Fractals">Creating Fractals with ECS and Jobs</div>
+
+            <img class="CaseImage" src="Images/Fractals/Code/Fractal3.gif" alt="">
+
+            <img class="CodeImage" src="Images/Fractals/Code/Example4.png" alt=""> 
+           
+            <div class = "DescriptionContainer">
+                <div class = "Description" id = "FractalDescription"> 
+                    To start, we define a series of variables that our entities are going to use to define themselves. 
+                    To define a fractal, we need to define a number of 'parents' and a number of 'child' entities per 'parent.' 
+                    I put parent and child in quotes because in Unity we refer to an owning object as a parent, but there is no 
+                    objecet hierarchy in ECS. In this context, every nth entity we mark as a parent, where n = number of children
+                    per generation. and we build the child entity's orientation around that of it's parents'. Once we have 
+                    determined a target number of generations and To visualize this, see below. 
+                </div>
+            </div> 
+            
+            <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal0.PNG" alt="">
+            <div class = "Caption"><em>Fractal Tree Generator by Andrew Herman <a href="https://codepen.io/hippiefuturist/full/NRWOxM">ashmystic.com</a></em></div>
+            <div class = "DescriptionContainer">
+                <div class = "Description" id = "FractalDescription"> 
+                    Here is a fractal tree with 5 branches (children) per generation (parent). Num Entities = 5^2 = 25.
+                </div>
+            </div>
+            
+            <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal3.PNG" alt="">
+            <div class = "Caption"><em>Fractal Tree Generator by Andrew Herman <a href="https://codepen.io/hippiefuturist/full/NRWOxM">ashmystic.com</a></em></div>
+            <div class = "DescriptionContainer">
+                <div class = "Description" id = "FractalDescription"> 
+                    Here is a fractal tree with 7 branches (children) per generation (parent) at 5 generations. Num Entities = 5^7 = 78125.
+                    That is the number of entities we will be creating for this demonstration. Without ECS and Jobs, the GPU would surely have
+                    a meltdown!
+                </div>
+            </div>
+
+            <img class="CodeImage" src="Images/Fractals/Code/Example5.png" alt="">
+
+            <div class = "DescriptionContainer">
+                <div class = "Description" id = "FractalDescription"> 
+                    To start setting up our fractal, we declare a total amount of enteties, which is equal to the number of generations and children
+                    per generation. Then we set up a native array to store our enteties. We instantiate our EntityManager and EntityArchetype to create components 
+                    that will modify the behaviors of the entity. Then we set the materials, set a starting location, and call our method that will spawn entities.
+                    The breakdown for that is shown below.
+                </div>
+            </div>
+         </div>  
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example6.png" alt="">
+
+         <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                We start by setting a default scale for our entities, then use the standard entityManager.CreateEntity() method to instantiate an entity. The overload
+                that I used here takes in an EntityArchetype and NativeArray of type Entity. There is an overload that takes just an EntityArchetype and one that takes
+                none. Again, EntityArchetype refers to what I would describe as a container of behavior modifications ("Components") that make up each entity. I define those 
+                "Components" later in the code. Because I passed in a nativearray, I only need to call CreateEntity once because it will repeat until the array is at it's end.
+                next, I instantiate a variable I use for indexing child orientation directions. Next I create an entity to use as a reference and set it to the existing
+                entity in the array that was created by CreateEntity(). Below that I determine the child scale and a "parent" variable I use to get the previous entity's 
+                properites. What I did was create a parent every 5th index at the start of each 'generation.' Below that i set a scale reference that is equal to the
+                parent's scale * the child scale, which in this case is 0.5. Lastly, I call InterpolateColor(), shown below.
+            </div>
+        </div>
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example7.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                What this method does is iterate a depth value which is used to modify the color of the material in the method 
+                shown below:
+            </div>
+        </div>
+        
+        <img class="CodeImage" src="Images/Fractals/Code/Example8.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                This is where we have a nice color transition from white, to yellow, to cyan, to red and then magenta in a random order. 
+                This randomness is just an interesting way for the fractals to be unique and have some variation. 
+                we set our lerp t value to increase as maxDepth increases, and then square it so we get a nice "ease in ease out" 
+                parabolic wave of color.
+            </div>
+        </div>
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example9.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                Next, we start by setting up our components for our entities. The first SetComponentData() method
+                sets data for a custom class I created called FractalComponent, which you'll see is used for rotation 
+                later. We declare our required LocalToWorld value and set it to loc, which contains the location that
+                we want our fractals to start spawning. This next part is where things get interesting. We fill a 
+                variable called 'newLoc' which is being set to the parent's position. Then we add to that based on depth
+                and a variable called offset, which slowly increases. Thus, the position of the child fractals increase
+                more and more outward per generation. This is where the heart of the fractal algorithm lies. Just by 
+                modifying newLoc slightly, you can get wildly different fractals, which you'll see below. After that,
+                we set the rotation, scale, and mesh components, and OffsetEntitySpawn is another optional variation which 
+                makes the fractal stretch backward on the z axis by X units. Then we iterate direction so the next fractal
+                spawns in a different orientation. Next, we need to rotate these entities. We don't need to, but why not
+                squeeze every bit of performance we can? Let's multithread that with Jobs.
+            </div>
+        </div>
+
+        <img class="CodeImage" src="Images/Fractals/Code/Example10.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                Enter: asynchronous rotation. It's actually more simple than you would expect. 
+                This implementation is different from the example I showed above however. It uses IJobForEach, 
+                which takes in a number of components. Specifically Rotation, Fractal Component (custom class), and LocalToWorld.
+                Within our required Execute() method, we change the value of the reference to rotation's component. We get that by
+                multiplying the current normalized rotation by FractalComponent.radiansPerSecond * deltaTime, which is set in FractalECS.cs
+                on line 133. Vector3.right means the entity rotates on the X axis. 
+                After that, we setup our required protected override JobHandle OnUpdate() method. There we set up our FractalJobSystem 
+                that contains our rotation logic that we wrote above, and gets our deltaTime value. The reason why we have to obtain this 
+                in OnUpdate when we declare our Job is simply because anything that lives inside that FractalJobSystem struct will be computed
+                asynchronously, which would make Time.deltaTime innacurate due to the logic not needing a specific execution order. 
+                I made a demonstration of this below.
+            </div>
+        </div>
+
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Demonstration.png" alt="">
+
+        <div class = "DescriptionContainer">
+            <div class = "Description" id = "FractalDescription"> 
+                That completes this walkthrough of ECS! Fractals are so fascinating, and with ECS and Jobs it's possible
+                to visualize them in 3D! I think that's amazing. It's very fun to experiment with different meshes, colors
+                and positions. Thank you for making it this far and checking out my 
+                work. If you have the time, please check out my other <a href="Works.html">works.</a> Also, feel free to reach out
+                to me at any time if you have any questions about this project! I'll leave you with some
+                examples of fractals I have created with my code.
+            </div>
+        </div>
+
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal1.gif" alt="">
+        <div class = "Caption"><em>The three arches</em></div>
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal2.gif" alt="">
+        <div class = "Caption"><em>Convex</em></div>
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/FractalImage1.PNG" alt="">
+        <div class = "Caption"><em>Parabola</em></div>
+        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal0.gif" alt="">
+        <div class = "Caption"><em>Circles</em></div>
     </div>
-
-    <div class = "Item">
-        <div class = "ItemHeader" id = "Rigid">Rigidbody Physics</div>
-        <div class="Images">
-            <img class="CaseImage" src="Images/UltraFall/UltraGIF.gif" alt="">
-            <div class = "Description"><div class = "DescriptionStart">The Problem:</div> To clone the feel of the game 
-            Downwell, movement needs to have a slow but smooth acceleration feel. The player needs to feel springy when jumping
-            and bouncing off of objects in 2D. 
-            </div>
-            <img class="CodeSmallImage" src="Images/UltraFall/Code/Physics3.PNG" alt="">
-            <div class = "Description"><div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div> In order to create the best 'falling' experience
-            I could, I felt a Dynamic Rigidbody rather than Kinematic was necessary on the player as I could use Unity's built in gravity system. 
-            In order to make that feel right though, horizontal movement needed to be smooth as the gravity would impact that as well. After lots of testing and research,
-            I felt Vector2.SmoothDamp created the best feel. 
-            </div>
-            <img class="CodeSmallImage" src="Images/UltraFall/Code/Physics 2.PNG" alt="">
-            <div class = "Description">Using a Dynamic Rigidbody came with some unprecedented challenges with horizontal movement. Thanks to gravity, movement
-                felt like mud. acceleration was so slow that it felt like there was an input delay. But when acceleration was turned up, jumping and falling became way too fast.
-                so, instead of clamping a max force, I added a lesser opposite force once the player reached that max value. This resulted in much floatier
-                jumping and falling which felt great.
-        </div>
-    </div>  
 </body>
 
 <footer>

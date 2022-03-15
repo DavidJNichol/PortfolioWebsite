@@ -63,7 +63,7 @@
 
     <div class="Entry">
         <div class="Item">
-            <div class="ItemHeader" id="Weapon">Weapon System</div>
+            <div class="ItemHeader" id="Weapons">Weapon System</div>
             <div class="VideoContainer">
                 <iframe class = "Video" width="560" height="315" src="https://www.youtube.com/embed/Mw_Uq2rq2DU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -90,182 +90,116 @@
                     certainly optimal.                         
                 </div>
             </div>
-        </div>
+        </div>      
 
         <img class="CodeImage" src="Images/Nova/Code/Example1.png" alt="">
-        <img class="CodeImage" src="Images/Nova/Code/Example2.png" alt="">
 
         <div class="Description">
             When we swap weapons, we first need to check if we have more than one weapon or if we are 
-            locked out of animation, which just checks if an animation is currently playing or
+            locked out of animation, which just checks if an animation is currently playing or if the weapon is aimed. 
+            Then, we turn off the ability to shoot and make the current weapon invisible. After that we have the actual
+            swap logic, and if we exceed the last position of our inventory we reach a pointer to the first slot. Then 
+            we set the current weapon to be visible and update our hud sprite on the bottom right to match the current weapon.
+        </div>
+
+        <img class="CodeImage" src="Images/Nova/Code/Example3.png" alt="">
+
+        <div class="Description">
+            NotifyWeaponChange() locks us out of other animations by setting bIsSwapping to true, then broadcasts a custom FAnimationRequest
+            delegate that plays our weapon equip animation based on the gun, and finally broadcasts a delegate that updates
+            the IK system with required data based on the gun's position.
+        </div>
+
+        <img class="CodeImage" src="Images/Nova/Code/Example2.png" alt="">
+
+        <div class="Description">
+            When we pick up a weapon much of the same logic occurs,
+            with some necessary initialization setup like enabling the weapon's mesh to simulate collision.
+        </div>
+
+        <img class="CodeImage" src="Images/Nova/Code/Example4.png" alt="">
+
+        <div class="Description">
+            This is the bulk of our context class for the strategy pattern. We have logic for picking up and dropping
+            weapons, and notifying the HUD through the combat component.
+        </div>
+
+        <img class="CodeImage" src="Images/Nova/Code/Example6.png" alt="">
+        <img class="CodeImage" src="Images/Nova/Code/Example5.png" alt="">
+
+        <div class="Description">
+            Our AGun class is heavier. This is where we have IK logic, hitscan logic, as well as specific behaviors
+            like adding/subtracting ammo and reloading, as well as an overridden HUD update that displays ammo
+            remaining.
+        </div>
+
+        <img class="CodeImage" src="Images/Nova/Code/Example7.png" alt="">
+
+        <div class="Description">
+            AMeleeWeapon contains a collider, and at it's core all it needs to do is call
+            OtherActor->TakeDamage() and make sure that it blacklists the player wielding the 
+            weapon or any actors that it has currently hit during the swing, which is stored in HitActors. 
+            If the OtherActor->TakeDamage() is an Unreal thing, and the beauty of it is if the other
+            actor does not have health then nothing happens. We don't need to do the checks for that in
+            our melee weapon class, leaving it simple. 
         </div>
     
         <div class = "Item">
-            <div class = "ItemHeader" id = "Jobs">Multithreading with Jobs</div>
-            <img class="CaseImage" src="Images/Fractals/JobsTest.gif" alt="">
-    
-            <img class="CodeImage" src="Images/Fractals/Code/Example2.png" alt="">
+            <div class = "ItemHeader" id = "Interaction">Lightweight Interaction System</div>
+            <img class="CaseImage" src="Images/Nova/Interaction.png" alt="">          
 
-            <img class="CodeImage" src="Images/Fractals/Code/Example3.png" alt="">
             <div class = "DescriptionContainer">
-                <div class = "Description" id = "JobsDescription"> 
-                    Unity's Job system is simple. At it's core, you have a struct that inherits from  with an execute method. 
-                    Any logic you want to be multithreaded goes in that method. Then, .Schedule() the struct and specify
-                    arrayLength and innerloopBatchCount.  
-                     <ol>
-                        <li>Declare a struct that inherits from IJobParallelFor with public void Execute(int index)</li>
-                        <li>Fill that method with logic that will be computed asynch.</li>
-                        <li>Instantiate that struct and any members it has.</li>
-                        <li>Schedule the Job.</li>
-                        <li>Don't forget to use NativeArrays. If you do, dispose of them when you're done.</li>
-        
-                     </ol>
+                <div class = "Description"> 
+                    <div class = "DescriptionStart">The Problem:</div>
+                    There are many objects in Project Nova that need to be interacted with by
+                    the player. As a space engineer, there are always buttons that need pressing
+                    or fuseboxes that need fixing. Thus, we needed a system where the player can scan the
+                    environment around them and be aware of what they can and can't interact with.
+                    But there is a problem. If you look at the image above, we have two different interactive objects,
+                    one shotgun and one lever. If you were to look at one of those objects you might think to do this:                   
                 </div>
             </div>
+
+            <img class="SmallerCaseImage" src="Images/Nova/Code/Example8.png" alt="">      
+
+            <div class = "Description"> 
+                However, the more interactive objects you have in the world the heavier and heavier the system gets.
+                And what if you change your interact button to something else? What if AShotgun is a REALLY heavy class?
+                Then everytime you look at the shotgun you need to know everything public about the shotgun. 
+                That's really problematic!                
+            </div>
+
+            <img class="CaseImage" src="Images/Nova/Code/Example9.png" alt="">
+
+            <div class = "Description"> 
+                <div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div>
+
+                The IInteractiveObject interface solves the problem of having to check for each scanned object for
+                each possible interactive item. All it needs to know is that it's an interactive object, and as long
+                as each of those objects have some ground similarities, the scanning of objects logic could care less 
+                about what it's looking at! As you can see above, IInteractiveObject is slim. The key components of 
+                each interactive object are:
+                <ul>
+                    <li>A HUD prompt with a prefix, key, suffix and name. i.e. "Press Space to Vault"</li>
+                    <li>A method that does something when the player looks at it</li>
+                    <li>A method that does something when the player looks away</li>
+                    <li>
+                        A method that does something when the player presses the desired key to interact with the object,
+                        and a delegate that fires with it as well
+                    </li>
+                    <li>A bool that determines whether or not we can interact with that object.</li>
+                    <li>
+                        A desired binding index (an index in Unreal's list of inputs in Project Settings->Engine->Input)
+                        i.e. 0 is jump, 1 is shoot, 2 is interact
+                    </li>
+                </ul>
+
+                That's all the shared logic we need! Let's see the base implementation of this interface in InteractiveObject.cpp::
+            </div>
+
+            <img class="CaseImage" src="Images/Nova/Code/Example10.png" alt="">
+
         </div> 
-        
-        <div class = "Item" id = "FractalGen">
-            <div class = "ItemHeader" id = "Fractals">Creating Fractals with ECS and Jobs</div>
-
-            <img class="CaseImage" src="Images/Fractals/Code/Fractal3.gif" alt="">
-
-            <img class="CodeImage" src="Images/Fractals/Code/Example4.png" alt=""> 
-           
-            <div class = "DescriptionContainer">
-                <div class = "Description" id = "FractalDescription"> 
-                    To start, we define a series of variables that our entities are going to use to define themselves. 
-                    To define a fractal, we need to define a number of 'parents' and a number of 'child' entities per 'parent.' 
-                    I put parent and child in quotes because in Unity we refer to an owning object as a parent, but there is no 
-                    objecet hierarchy in ECS. In this context, every nth entity we mark as a parent, where n = number of children
-                    per generation. and we build the child entity's orientation around that of it's parents'. Once we have 
-                    determined a target number of generations and To visualize this, see below. 
-                </div>
-            </div> 
-            
-            <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal0.PNG" alt="">
-            <div class = "Caption"><em>Fractal Tree Generator by Andrew Herman <a href="https://codepen.io/hippiefuturist/full/NRWOxM">ashmystic.com</a></em></div>
-            <div class = "DescriptionContainer">
-                <div class = "Description" id = "FractalDescription"> 
-                    Here is a fractal tree with 5 branches (children) per generation (parent). Num Entities = 5^2 = 25.
-                </div>
-            </div>
-            
-            <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal3.PNG" alt="">
-            <div class = "Caption"><em>Fractal Tree Generator by Andrew Herman <a href="https://codepen.io/hippiefuturist/full/NRWOxM">ashmystic.com</a></em></div>
-            <div class = "DescriptionContainer">
-                <div class = "Description" id = "FractalDescription"> 
-                    Here is a fractal tree with 7 branches (children) per generation (parent) at 5 generations. Num Entities = 5^7 = 78125.
-                    That is the number of entities we will be creating for this demonstration. Without ECS and Jobs, the GPU would surely have
-                    a meltdown!
-                </div>
-            </div>
-
-            <img class="CodeImage" src="Images/Fractals/Code/Example5.png" alt="">
-
-            <div class = "DescriptionContainer">
-                <div class = "Description" id = "FractalDescription"> 
-                    To start setting up our fractal, we declare a total amount of enteties, which is equal to the number of generations and children
-                    per generation. Then we set up a native array to store our enteties. We instantiate our EntityManager and EntityArchetype to create components 
-                    that will modify the behaviors of the entity. Then we set the materials, set a starting location, and call our method that will spawn entities.
-                    The breakdown for that is shown below.
-                </div>
-            </div>
-         </div>  
-
-        <img class="CodeImage" src="Images/Fractals/Code/Example6.png" alt="">
-
-         <div class = "DescriptionContainer">
-            <div class = "Description" id = "FractalDescription"> 
-                We start by setting a default scale for our entities, then use the standard entityManager.CreateEntity() method to instantiate an entity. The overload
-                that I used here takes in an EntityArchetype and NativeArray of type Entity. There is an overload that takes just an EntityArchetype and one that takes
-                none. Again, EntityArchetype refers to what I would describe as a container of behavior modifications ("Components") that make up each entity. I define those 
-                "Components" later in the code. Because I passed in a nativearray, I only need to call CreateEntity once because it will repeat until the array is at it's end.
-                next, I instantiate a variable I use for indexing child orientation directions. Next I create an entity to use as a reference and set it to the existing
-                entity in the array that was created by CreateEntity(). Below that I determine the child scale and a "parent" variable I use to get the previous entity's 
-                properites. What I did was create a parent every 5th index at the start of each 'generation.' Below that i set a scale reference that is equal to the
-                parent's scale * the child scale, which in this case is 0.5. Lastly, I call InterpolateColor(), shown below.
-            </div>
-        </div>
-
-        <img class="CodeImage" src="Images/Fractals/Code/Example7.png" alt="">
-
-        <div class = "DescriptionContainer">
-            <div class = "Description" id = "FractalDescription"> 
-                What this method does is iterate a depth value which is used to modify the color of the material in the method 
-                shown below:
-            </div>
-        </div>
-        
-        <img class="CodeImage" src="Images/Fractals/Code/Example8.png" alt="">
-
-        <div class = "DescriptionContainer">
-            <div class = "Description" id = "FractalDescription"> 
-                This is where we have a nice color transition from white, to yellow, to cyan, to red and then magenta in a random order. 
-                This randomness is just an interesting way for the fractals to be unique and have some variation. 
-                we set our lerp t value to increase as maxDepth increases, and then square it so we get a nice "ease in ease out" 
-                parabolic wave of color.
-            </div>
-        </div>
-
-        <img class="CodeImage" src="Images/Fractals/Code/Example9.png" alt="">
-
-        <div class = "DescriptionContainer">
-            <div class = "Description" id = "FractalDescription"> 
-                Next, we start by setting up our components for our entities. The first SetComponentData() method
-                sets data for a custom class I created called FractalComponent, which you'll see is used for rotation 
-                later. We declare our required LocalToWorld value and set it to loc, which contains the location that
-                we want our fractals to start spawning. This next part is where things get interesting. We fill a 
-                variable called 'newLoc' which is being set to the parent's position. Then we add to that based on depth
-                and a variable called offset, which slowly increases. Thus, the position of the child fractals increase
-                more and more outward per generation. This is where the heart of the fractal algorithm lies. Just by 
-                modifying newLoc slightly, you can get wildly different fractals, which you'll see below. After that,
-                we set the rotation, scale, and mesh components, and OffsetEntitySpawn is another optional variation which 
-                makes the fractal stretch backward on the z axis by X units. Then we iterate direction so the next fractal
-                spawns in a different orientation. Next, we need to rotate these entities. We don't need to, but why not
-                squeeze every bit of performance we can? Let's multithread that with Jobs.
-            </div>
-        </div>
-
-        <img class="CodeImage" src="Images/Fractals/Code/Example10.png" alt="">
-
-        <div class = "DescriptionContainer">
-            <div class = "Description" id = "FractalDescription"> 
-                Enter: asynchronous rotation. It's actually more simple than you would expect. 
-                This implementation is different from the example I showed above however. It uses IJobForEach, 
-                which takes in a number of components. Specifically Rotation, Fractal Component (custom class), and LocalToWorld.
-                Within our required Execute() method, we change the value of the reference to rotation's component. We get that by
-                multiplying the current normalized rotation by FractalComponent.radiansPerSecond * deltaTime, which is set in FractalECS.cs
-                on line 133. Vector3.right means the entity rotates on the X axis. 
-                After that, we setup our required protected override JobHandle OnUpdate() method. There we set up our FractalJobSystem 
-                that contains our rotation logic that we wrote above, and gets our deltaTime value. The reason why we have to obtain this 
-                in OnUpdate when we declare our Job is simply because anything that lives inside that FractalJobSystem struct will be computed
-                asynchronously, which would make Time.deltaTime innacurate due to the logic not needing a specific execution order. 
-                I made a demonstration of this below.
-            </div>
-        </div>
-
-        <img class="SmallerCaseImage" src="Images/Fractals/Code/Demonstration.png" alt="">
-
-        <div class = "DescriptionContainer">
-            <div class = "Description" id = "FractalDescription"> 
-                That completes this walkthrough of ECS! Fractals are so fascinating, and with ECS and Jobs it's possible
-                to visualize them in 3D! I think that's amazing. It's very fun to experiment with different meshes, colors
-                and positions. Thank you for making it this far and checking out my 
-                work. If you have the time, please check out my other <a href="Works.html">works.</a> Also, feel free to reach out
-                to me at any time if you have any questions about this project! I'll leave you with some
-                examples of fractals I have created with my code.
-            </div>
-        </div>
-
-        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal1.gif" alt="">
-        <div class = "Caption"><em>The three arches</em></div>
-        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal2.gif" alt="">
-        <div class = "Caption"><em>Convex</em></div>
-        <img class="SmallerCaseImage" src="Images/Fractals/Code/FractalImage1.PNG" alt="">
-        <div class = "Caption"><em>Parabola</em></div>
-        <img class="SmallerCaseImage" src="Images/Fractals/Code/Fractal0.gif" alt="">
-        <div class = "Caption"><em>Circles</em></div>
-    </div>
 </body>
 
 <footer>

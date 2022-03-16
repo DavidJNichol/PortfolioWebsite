@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=EB+Garamond&family=Hubballi&family=Inter:wght@300&family=Josefin+Slab:wght@500&family=Kite+One&family=PT+Sans&family=Raleway:wght@200&family=Roboto+Condensed:wght@300&family=Saira:wght@300&display=swap');
 
+
 *{
     caret-color: transparent;
 }
@@ -97,9 +98,35 @@ body::before {
 
 footer{
     position: absolute;
-    bottom: 0;
+    bottom: 10;
     width: 100%;
     height: 2.5rem;  
+}
+
+.VideoContainer{
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 2vw;
+    height: 25vw;
+    margin-bottom: 2vw;
+    width: 100%;
+}
+
+.Video{
+    position: absolute;
+    top: 0vw;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+a{
+    text-decoration: none;
 }
 
 .BackButton{

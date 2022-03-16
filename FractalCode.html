@@ -172,7 +172,11 @@
                 that I used here takes in an EntityArchetype and NativeArray of type Entity. There is an overload that takes just an EntityArchetype and one that takes
                 none. Again, EntityArchetype refers to what I would describe as a container of behavior modifications ("Components") that make up each entity. I define those 
                 "Components" later in the code. Because I passed in a nativearray, I only need to call CreateEntity once because it will repeat until the array is at it's end.
-                next, I instantiate a variable I use for indexing child orientation directions. Next I create an entity to use as a reference and set it to the existing
+                next, I instantiate a variable I use for indexing child orientation directions.           
+            </div>
+
+            <div class = "Description">
+                Next I create an entity to use as a reference and set it to the existing
                 entity in the array that was created by CreateEntity(). Below that I determine the child scale and a "parent" variable I use to get the previous entity's 
                 properites. What I did was create a parent every 5th index at the start of each 'generation.' Below that i set a scale reference that is equal to the
                 parent's scale * the child scale, which in this case is 0.5. Lastly, I call InterpolateColor(), shown below.
@@ -207,10 +211,17 @@
                 sets data for a custom class I created called FractalComponent, which you'll see is used for rotation 
                 later. We declare our required LocalToWorld value and set it to loc, which contains the location that
                 we want our fractals to start spawning. This next part is where things get interesting. We fill a 
-                variable called 'newLoc' which is being set to the parent's position. Then we add to that based on depth
-                and a variable called offset, which slowly increases. Thus, the position of the child fractals increase
+                variable called 'newLoc' which is being set to the parent's position. 
+            </div>
+
+            <div class = "Description"> 
+                Then we add to that based on depth and a variable called offset, which slowly increases. Thus, the position of the child fractals increase
                 more and more outward per generation. This is where the heart of the fractal algorithm lies. Just by 
-                modifying newLoc slightly, you can get wildly different fractals, which you'll see below. After that,
+                modifying newLoc slightly, you can get wildly different fractals, which you'll see below. 
+            </div>            
+                
+            <div class = "Description">
+                After that,
                 we set the rotation, scale, and mesh components, and OffsetEntitySpawn is another optional variation which 
                 makes the fractal stretch backward on the z axis by X units. Then we iterate direction so the next fractal
                 spawns in a different orientation. Next, we need to rotate these entities. We don't need to, but why not
@@ -225,11 +236,19 @@
                 Enter: asynchronous rotation. It's actually more simple than you would expect. 
                 This implementation is different from the example I showed above however. It uses IJobForEach, 
                 which takes in a number of components. Specifically Rotation, Fractal Component (custom class), and LocalToWorld.
-                Within our required Execute() method, we change the value of the reference to rotation's component. We get that by
+                Within our required Execute() method, we change the value of the reference to rotation's component. 
+            </div>
+
+            <div class = "Description">
+                We get that by
                 multiplying the current normalized rotation by FractalComponent.radiansPerSecond * deltaTime, which is set in FractalECS.cs
                 on line 133. Vector3.right means the entity rotates on the X axis. 
                 After that, we setup our required protected override JobHandle OnUpdate() method. There we set up our FractalJobSystem 
-                that contains our rotation logic that we wrote above, and gets our deltaTime value. The reason why we have to obtain this 
+                that contains our rotation logic that we wrote above, and gets our deltaTime value. 
+            </div>
+                
+            <div class = "Description">          
+                The reason why we have to obtain this 
                 in OnUpdate when we declare our Job is simply because anything that lives inside that FractalJobSystem struct will be computed
                 asynchronously, which would make Time.deltaTime innacurate due to the logic not needing a specific execution order. 
                 I made a demonstration of this below.

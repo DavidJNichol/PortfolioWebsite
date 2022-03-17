@@ -169,7 +169,7 @@
                 That's really problematic!                
             </div>
 
-            <img class="CaseImage" src="Images/Nova/Code/Example9.png" alt="">
+            <img class="CodeImage" src="Images/Nova/Code/Example9.png" alt="">
 
             <div class = "Description"> 
                 <div class = "DescriptionStart" style = "color: #FFFFCC">The Solution:</div>
@@ -187,6 +187,9 @@
                         A method that does something when the player presses the desired key to interact with the object,
                         and a delegate that fires with it as well
                     </li>
+                    <li>
+                        A method that does something in blueprint when the player interacts
+                    </li>
                     <li>A bool that determines whether or not we can interact with that object.</li>
                     <li>
                         A desired binding index (an index in Unreal's list of inputs in Project Settings->Engine->Input)
@@ -197,14 +200,120 @@
                 That's all the shared logic we need! Let's see the base implementation of this interface in InteractiveObject.cpp::
             </div>
 
-            <img class="CaseImage" src="Images/Nova/Code/Example10.png" alt="">
+            <img class="CodeImage" src="Images/Nova/Code/Example10.png" alt="">
 
             <div class = "Description"> 
                 IInteractiveObject::ReceiveLookedAt(APawn* EventSender) is a method that is called 
-                once whenever an interactive object is looked at. 
+                once whenever an interactive object is looked at. In order for them to each have a custom
+                key for interaction, we need to get a binding of that specific key, which is done in line 6.
+                then we use the FInputActionHandler named Signature as a delegate to hook up the key press
+                to the interactive object's InteractionEvent() function. We add this binding to EventSender which
+                is the pawn who interacted with the object, and store a handle of that binding so we can remove it later.
             </div>
 
+            <div class = "Description"> 
+                Whenever the shooter looks away from the object, the binding is removed. This way, we don't have any clutter of
+                extra bindings adding up and up causing the list of inputs to swell. This way also makes sure that you don't trigger
+                the interaction event of a pistol when you pull a lever because you just looked at a pistol and 
+                the interact buttons are both bound to the same key.
+            </div>
+
+            <div class = "Description"> 
+                By default, our binding name is "Interact." This will return an input binding that is hooked
+                up with the key "E" as shown below:
+            </div>
+
+            <img class="SmallerCaseImage" src="Images/Nova/Code/Binding.PNG" alt="">
+
+            <img class="CodeImage" src="Images/Nova/Code/Example11.png" alt="">
+
+            <div class = "Description"> 
+                AInteractableGeneratorPiece is an example of a very barebones interactive object. It has a BeginPlay()
+                and its interaction event. Line 17 triggers any logic we would want the designers to be able to modify 
+                through blueprint, shown below:
+            </div>
+
+            <img class="SmallerCaseImage" src="Images/Nova/Code/BP.PNG" alt="">
+
+            <div class="ItemHeader">My Thoughts</div>
+
+            <div class = "Description"> 
+                The obvious limitation to this approach is that we are binding to these input bindings based on strings.
+                For example, FInputActionBinding("Interact", IE_Pressed) works, but if I misspell interact I'm going to 
+                be very confused why it's not working. Or, if we change the name of the binding in the future we would need
+                to change every string binding in our code.
+            </div>        
+            
+            <div class = "Description"> 
+                There are always decisions to be
+                made about the level of abstraction for gameplay systems - abstract it too much and your code
+                can run slow, and can become hard for others to follow. Abstract too little and you won't be 
+                getting as much performance as you should be. Although it's not perfect, I think the interactive object 
+                system I created is balanced in this way. Not too hard to read, not too slow. I learned a lot about 
+                SOC by doing this. 
+            </div>      
+            
+            <div class = "Description"> 
+                I learned a lot about SOC by doing this. There are pros and cons to both Unity and Unreal,
+                but one thing that certainly is a plus in my book with Unreal C++ is the enforcement of OOP.
+                In Unity, anything is a GameObject and anything can run any kind of script. It's much more 
+                relaxed and thus easier to write messy code. 
+            </div>    
+
+            <div class="ItemHeader">State System</div>
+            <img class="SmallerCaseImage" src="Images/Nova/Code/Rig.png" alt="">
+
+            <div class = "Description"> 
+                Like any other game, we created a state system to manage things like animation and movement.
+                A benefit to breaking down each condition that the character is in into states is that you 
+                can specify exactly what limitations and what adaptations the player currently has.
+                An example of what I mean is if the player has less than 50% health remaining, 
+                then they enter the crippled state.
+            </div>    
+
+            <div class = "Description"> 
+                Their walking animation may be different,
+                they walk 30% slower, maybe they can no longer jump. The point is, separating those limitations 
+                out into their own states enforces organization of those player conditions. More importantly, we can 
+                enforce which states the player can and can't enter from that state, which means we don't have to
+                have 100 bools and if statements spread throughout the player class determining what specific behavior
+                is enabled or disabled.
+            </div>    
+
+
+
+            <img class="CaseImage" src="Images/Nova/Code/Vent.gif" alt="">
+            <div class = "Caption"><em>Prototype vent interaction</em></div>
+
+            <div class = "Description"> 
+                For this example, we are going to look at "venting" in our game, which is 
+                still in the prototype phase. The process works like this:
+                <ul>
+                    <li>Player walks up to fusebox</li>
+                    <li>Player interacts with fusebox, animation plays</li>
+                    <li>Vent grates turn off and become interactable after anim is done</li>
+                    <li>Player interacts with vent</li>
+                    <li>Player lerps down to vent spline position and rotation</li>
+                    <li>Player crawls to end of vent spline</li>
+                    <li>Player lerps to standing position</li>
+                </ul>
+
+                while the player is in the vent phase, we have to make sure they can't just stand up
+                and leave. The idea is that their movement is restricted to a 1D axis on that spline
+                and they cannot turn around, because crawling in a vent should feel restrictive.
+            </div>
+
+            <img class="CodeImage" src="Images/Nova/Code/Example12.png" alt="">
+
+            <div class = "Description"> 
+                When the player interacts with the fusebox, the vent becomes interactable. When the player
+                interacts with the vent the method above fires. If the player is the correct type of pawn we 
+                are looking for, they enter the vent state, then we make sure the vent is no longer interactable,
+                turning off the grate collision as that happens.
+            </div>
+            
         </div> 
+    </div>
 </body>
 
 <footer>

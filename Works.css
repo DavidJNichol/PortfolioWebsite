@@ -123,17 +123,18 @@ footer{
 .TagHeader{
     display: inline-block;
     font-family: 'Saira', sans-serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight:500;
-    color:#c3f7db;
+    color:#a4ebbc;
 }
 
 .TagEntries{
     display: inline-flex;
-    border-radius: 2vw;
+    border-radius: 1.75vw;
     background-color: #31BEC3;
-    padding: .8vw;
+    padding: .65vw;
     color:white;
+    margin-left: .2vw;
     transition: all 400ms ease;
     font-family: 'Saira', sans-serif;
     font-size: 1.4vw;
@@ -141,7 +142,7 @@ footer{
 }
 
 .TagEntries:hover{
-    padding: 1.5vw;
+    padding: 1.1vw;
     transition: all 400ms ease;
 }
 
@@ -158,8 +159,8 @@ footer{
     text-align: center;
     align-items: center;
     font-family: 'Saira', sans-serif;
-    color:#c3f7db;
-    font-size: 2.5vw;
+    color:#a4ebbc;
+    font-size: 2.2vw;
     display: flex;
     margin-bottom: 1.2vw;
 }
@@ -170,7 +171,7 @@ footer{
     margin-right: auto;
     margin-top: 4vw;
     text-align: center;
-    color:#c3f7db;
+    color:#a4ebbc;
     width: 100%;
 }
 
@@ -209,7 +210,7 @@ a{
 .Date{
     font-family: 'Saira', sans-serif;
     font-size: 1.5vw;
-    color:#c3f7db;
+    color:#a4ebbc;
     margin-top: 1.3vw;
 }
 
@@ -338,7 +339,7 @@ footer{
     display: inline-block;
     vertical-align: middle;
     font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
-    color: #CADBCC
+    color: #a4ebbc;
 }
 
 .ContactEntry{

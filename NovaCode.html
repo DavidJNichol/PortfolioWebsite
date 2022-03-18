@@ -286,8 +286,8 @@
             <div class = "Caption"><em>Prototype vent interaction</em></div>
 
             <div class = "Description"> 
-                For this example, we are going to look at "venting" in our game, which is 
-                still in the prototype phase. The process works like this:
+                For an example of our state system, we are going to look at the venting state I wrote.
+                The process works like this:
                 <ul>
                     <li>Player walks up to fusebox</li>
                     <li>Player interacts with fusebox, animation plays</li>
@@ -311,9 +311,79 @@
                 are looking for, they enter the vent state, then we make sure the vent is no longer interactable,
                 turning off the grate collision as that happens.
             </div>
-            
-        </div> 
-    </div>
+
+            <div class = "Description"> 
+                USVentState inherits from USProneState because we need it to do very similar things 
+                as being prone. However, we don't want the player to move around horizontally for example,
+                so we don't want to use everything. We do however benefit from the same player input reference that 
+                prone uses to transform the players position and rotation, as well as set new states for the player 
+                to be in.
+            </div>
+
+            <img class="SmallerCaseImage" src="Images/Nova/Code/UML2.png" alt="">
+
+            <div class = "Description"> 
+                USVentState has a lot of connected parts. This would normally mean that entering the vent
+                state is slugglish, and we would be limited if we have a scenario where we want the player to
+                enter and exit several states very quickly. The good news is that we don't have to inherit all
+                of the functionality we don't need. We simply just override the base class functions and don't 
+                call Super::FunctionName().
+            </div>
+
+            <img class="CodeImage" src="Images/Nova/Code/Example13.png" alt="">
+
+            <div class = "Description"> 
+                The first thing we do is call Super::OnEnter(), which triggers the OnEnter() of USProneState, USTuckstate and
+                USMovementState. What this does essentially is sets the limitations of our player's movement component.
+                For example, USTuckState calls Movement->bIsInTuckTransition = true; Which stops the player from being
+                able to run.
+            </div>
+
+            <div class = "Description"> 
+                Next, as long as the thing we are looking at is a vent and it's valid, we get the spline that's
+                connected to the vent then set up some variables for lerping position. After that we set the 
+                current crawl direction based on which vent was entered. To represent the position along the spline,
+                we use a float called progress. If we enter the right vent, progress is equal to the length of the spline.
+                Otherwise, it's 0. We set our lerp rotation then set the location where we need to lerp into a standing 
+                position.
+            </div>
+
+            <div class = "Description"> 
+                The delayed action manager is essentially a custom lerp system we created
+                that takes in a float amount of time, then a delegate function with any parameters 
+                the function takes in. USVentState::LerpToCrawl() changes the player's position and rotation
+                over time. Over the duration of LerpToCrawlSpeed's value, which in this case is 2.f.
+            </div>
+
+            <img class="CodeImage" src="Images/Nova/Code/Example14.png" alt="">
+
+            <div class = "Description"> 
+                Finally, this is how the player moves along the spline. Input->MoveY is the float between 0 and 1 
+                that captures the amount of input on the W and S keys, or forward and backward as we percieve as the player.
+                we add that to progress then get a point along the spline with that value, and set the player's position
+                to that. If we are going left to right, forward means increasing progress so we add,
+                going right to left forward means decreasing progress so we subtract.
+            </div>
+
+            <img class="CaseImage" src="Images/Nova/Code/mainroom.png" alt="">
+            <div class = "Caption"><em>Common Area</em></div>
+            <img class="CaseImage" src="Images/Nova/Code/LowerLevel.png" alt="">
+            <div class = "Caption"><em>Lower Level</em></div>
+            <img class="CaseImage" src="Images/Nova/Code/genera.png" alt="">
+            <div class = "Caption"><em>Generator Room</em></div>
+
+            <div class = "Description"> 
+                Project Nova was a great learning experience for me. Not only about learning more Unreal and C++, but 
+                about working as a team. We did weekly stand up meetings and had two week build sprints to keep things
+                organized. I also learned a lot from the other programmer on the project, 
+                <a href="https://lienau.co/" target="_blank">Brendan Lienau</a> who had a lot of prior experience with Unreal.
+            </div>
+
+            <div class = "Description" id = "FractalDescription"> 
+                That completes my code demonstrations for Project Nova. If you have the time, please check out my other 
+                <a href="Works.html">works.</a> Also, feel free to reach out
+                to me at any time for questions. Thank you for reading!
+            </div>
 </body>
 
 <footer>

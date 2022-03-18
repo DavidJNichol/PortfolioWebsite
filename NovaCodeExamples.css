@@ -100,6 +100,7 @@ footer{
     bottom: 0;
     width: 100%;
     height: 2.5rem;  
+    bottom: -3vw;
 }
 
 .VideoContainer{
@@ -255,7 +256,7 @@ a{
 }
 
 .ContactElement{
-    margin-top: 10vw;
+    margin-top: 4vw;
     margin-left: 6.5vw;
     margin-bottom: 2vw;
     margin-right: 3.5vw;
@@ -275,7 +276,7 @@ a{
 .SocialMediaElement{
     display: inline-block;
     vertical-align:middle;
-    margin-top: 8vw;
+    margin-top: 2vw;
     filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);
 }
 

@@ -498,7 +498,7 @@ footer{
     font-family: 'STIX Two Math', serif;
     font-size: 3vw;
     width: 20%;
-    margin-top: 7vw;
+    margin-top: 8vw;
     margin-bottom: .7vw;
     color:#CADBCC
 }
@@ -517,7 +517,7 @@ footer{
     color:rgb(191,220,205);
     font-size: 2vw;
     transition: all 500ms ease;
-    margin-top: 2vw;
+    margin-top: 1vw;
     float: left;
 }
 
@@ -546,7 +546,7 @@ a{
 .ImageOfMe{  
     height: 27vw;
     width: 17vw;
-    margin-top: -6.2vw;
+    margin-top: -8.3vw;
     margin-left: 8vw;
 	background: transparent url('img/David.png') 0% 0% no-repeat padding-box;
     box-shadow: 1vw -1vw 0 rgb(191,220,205);
@@ -555,6 +555,7 @@ a{
 .ContactElement{
     margin-left: 6.5vw;
     margin-right: 3.5vw;
+    margin-top: 1vw;
     display: inline-block;
     vertical-align: middle;
     font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
@@ -569,7 +570,6 @@ a{
 }
 
 .SocialMediaElement{
-    margin-top: -.5vw;
     display: inline-block;
     vertical-align:middle;
     filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);

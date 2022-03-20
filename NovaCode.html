@@ -69,7 +69,7 @@
             </div>
             <div class="Description">
                 <div class = "DescriptionStart">The Problem:</div>
-                Because we wanted make ammo a precious resource like in Resident Evil, we knew we needed to create
+                Because we wanted to make ammo a precious resource like in Resident Evil, we knew we needed to create
                 a weapon system that lets the player swap back and forth from melee to gun. Each gun needed 
                 bloom, recoil, reloading and aiming. The guns need to have IK and other animations and
                 the player needs to be able to cancel them on the fly. Finally, we needed to have an accurate hitscan.
@@ -83,8 +83,10 @@
                     To start, we created an AWeapon class which implements the IInteractiveObject interface 
                     <a href="NovaCode.html#Interactive">(see lightweight interactive object system)</a>.        
                     The AMeleeWeapon and AGun classes inherit from AWeapon. This way, all the 
-                    <a href="https://github.com/Project-Nova-Team/Project-Nova/blob/main/Source/ProjectNova/Weapon/CombatComponent.cpp">UCombatComponent</a>
-                    needs to know when a swap input is fired is that it's swapping to a weapon. It doesn't need to know 
+                    when a swap input is fired
+                    <a href="https://github.com/Project-Nova-Team/Project-Nova
+                    /blob/main/Source/ProjectNova/Weapon/CombatComponent.cpp">UCombatComponent</a>
+                    needs to know is that it's swapping to a weapon. It doesn't need to know 
                     anything about recoil, damage or anything weapon type specific! Scroll wheel swapping can register
                     a lot of input events within a short amount of time, so having the function as light as possible is 
                     certainly optimal.                         

@@ -435,6 +435,51 @@ header{
     margin-bottom: 1.5vw;
 }
 
+.FeaturedWorksHeader{
+    margin-top: .5vw;
+    margin-left: .5vw;
+    font-family: 'Gruppo', cursive;
+    font-size: 4vw;
+    color: white;
+}
+
+.WorkImage{
+    width: 3vw;
+    height: 3vw;
+    display: inline;
+    align-self: center;
+}
+
+.FeaturedWorks{
+    align-content: center;
+    display: inline-flex;
+    padding-right: 10vw;
+}
+
+.Work-Entry{
+    padding: 1.3vw;
+    border-radius: .5vw;
+    border: .25vw solid black;
+    background-color: rgba(41, 53, 75, .5);
+    margin-top: .1vw;
+    margin-left: 4vw;
+    transition: all 400ms ease;
+}
+
+.Work-Entry:hover{
+    padding: 1.8vw;
+    transition: all 400ms ease;
+}
+
+.EntryTitle{
+    font-size: 1.8vw;
+    margin-left: 7.2vw;
+    color: white;
+    font-family: 'Gruppo', cursive;
+    margin-top: -2.7vw;
+    text-align: center;
+}
+
 .HeaderNavItem{
     color: black;
     padding-left: 2vw;
@@ -585,4 +630,69 @@ a{
 .SocialMediaEntry:hover{
         filter: invert(0.35) sepia(1) saturate(9.2) hue-rotate(360deg) brightness(1.2);
     }
+}
+
+#Nova{
+    background-image: url("Images/Lab.jpg");
+    background-size: 100%;
+}
+
+#NovaTitle{
+    margin-left: 7.5vw;
+    margin-top: -3.5vw;
+}
+
+#NovaImage{
+    margin-top: 1.3vw;
+    margin-left: .2vw;
+}
+
+#Ultra{
+    background-image: url("Images/Stars.png");
+    background-size: 15%;
+    padding-right: 2.3vw;
+    padding-bottom: 2.3vw;
+}
+
+#UltraImage{
+    filter: invert(1);
+    margin-top: 1vw;
+    margin-left: -.5vw;
+    margin-right: .8vw;
+}
+
+#UltraTitle{
+    margin-right: .2vw;
+}
+
+#Fractals{
+    background-image: url("Images/Fractals/Fractals.gif");
+    background-size: 105%;
+}
+
+#FractalTitle{
+    margin-left: 8vw;
+    margin-top: -3.5vw;
+}
+
+#FractalImage{
+    margin-top: 1.3vw;
+    margin-left: .2vw;
+}
+
+#Flight{
+    background-image: url("Images/aurora.jpg");
+    background-size: 100%;
+    background-position: 50%;
+}
+
+#FlightTitle{
+    margin-left: 8vw;
+    margin-top: -3.5vw;
+}
+
+#FlightImage{
+    width: 2.5vw;
+    height: 2.5vw;
+    margin-top: 1.4vw;
 }

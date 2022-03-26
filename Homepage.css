@@ -451,9 +451,11 @@ header{
 }
 
 .FeaturedWorks{
+    margin-top: 1.7vw;
     align-content: center;
     display: inline-flex;
     padding-right: 10vw;
+    margin-left: 3vw;
 }
 
 .Work-Entry{
@@ -543,7 +545,7 @@ footer{
     font-family: 'STIX Two Math', serif;
     font-size: 3vw;
     width: 20%;
-    margin-top: 8vw;
+    margin-top: 6vw;
     margin-bottom: .7vw;
     color:#CADBCC
 }
@@ -591,7 +593,7 @@ a{
 .ImageOfMe{  
     height: 27vw;
     width: 17vw;
-    margin-top: -8.3vw;
+    margin-top: -6.3vw;
     margin-left: 8vw;
 	background: transparent url('img/David.png') 0% 0% no-repeat padding-box;
     box-shadow: 1vw -1vw 0 rgb(191,220,205);
@@ -650,8 +652,8 @@ a{
 #Ultra{
     background-image: url("Images/Stars.png");
     background-size: 15%;
-    padding-right: 2.3vw;
-    padding-bottom: 2.3vw;
+    padding-right: 2.1vw;
+    padding-bottom: 2.6vw;
 }
 
 #UltraImage{
@@ -684,6 +686,7 @@ a{
     background-image: url("Images/aurora.jpg");
     background-size: 100%;
     background-position: 50%;
+    padding-bottom: 1.76vw;
 }
 
 #FlightTitle{

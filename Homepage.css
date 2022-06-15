@@ -606,7 +606,8 @@ a{
     display: inline-block;
     vertical-align: middle;
     font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
-    color: #CADBCC
+    color: #CADBCC;
+    margin-bottom: 2vw;
 }
 
 .ContactEntry{
@@ -620,6 +621,7 @@ a{
     display: inline-block;
     vertical-align:middle;
     filter: invert(89%) sepia(21%) saturate(232%) hue-rotate(110deg) brightness(98%) contrast(89%);
+    margin-bottom: 1vw;
 }
 
 .SocialMediaEntry{

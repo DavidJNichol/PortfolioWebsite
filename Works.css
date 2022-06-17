@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Sorts+Mill+Goudy&family=Zen+Kurenaido&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=Josefin+Slab:wght@500&family=Kite+One&family=Raleway:wght@200&family=Saira:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Chakra+Petch&family=EB+Garamond&family=Hubballi&family=Inter:wght@300&family=Josefin+Slab:wght@500&family=Kite+One&family=PT+Sans&family=Raleway:wght@200&family=Roboto+Condensed:wght@300&family=Saira:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300&display=swap');
 
 
 *{
@@ -117,12 +118,12 @@ footer{
     align-self: center;
     margin-bottom: 4.5vw;
     transition: all 500ms ease;
-    color:#FFFFCC;
+    color:white;
 }
 
 .TagHeader{
     display: inline-block;
-    font-family: 'Saira', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.5vw;
     font-weight:500;
     color:#a4ebbc;
@@ -133,8 +134,10 @@ footer{
     border-radius: 1.75vw;
     background-color: #31BEC3;
     padding: .65vw;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
     color:white;
-    margin-left: .2vw;
+    margin-left: .5vw;
     transition: all 400ms ease;
     font-family: 'Saira', sans-serif;
     font-size: 1.4vw;
@@ -150,7 +153,7 @@ footer{
     font-size: 4.5vw;
     transition: all 500ms ease;
     margin-top: 1vw;
-    font-family: 'Saira', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:#FFFFCC;
 }
 
@@ -192,9 +195,21 @@ li{
 .WorkSummary{
     font-size: 1.5vw;
     margin-bottom: 2vw;
+    margin-top: -1vw;
     color:#FFFFCC;
+    background-color: rgb(0, 0, 10, .5);
+    padding: 2vw;
+    border-radius: 2vw;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
 }
 
+.SummaryStart{
+    display: inline;
+    font-size: 2.5vw;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: .5vw;
+}
 .CodeButton{
     display: inline;
     color:  #31BEC3;
@@ -278,6 +293,7 @@ a{
 
 .Images{
     height: 15vw;
+    margin-left: .9vw;
 }
 
 .Image{
@@ -297,6 +313,7 @@ a{
 
 .LargeImg{
     margin-top: 1vw;
+    margin-left: .4vw;
     border-radius: 12px;
     transition: all 400ms ease;
     height: 25vw;

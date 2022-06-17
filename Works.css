@@ -171,14 +171,17 @@ footer{
 .DescriptionHeader{
     float:left;
     font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color:#FFFFCC;
 }
 
 .Item-Description{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2vw;
     margin-right: auto;
     margin-top: 4vw;
     text-align: center;
+    font-weight: 200;
     color:#a4ebbc;
     width: 100%;
 }

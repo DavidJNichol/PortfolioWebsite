@@ -260,7 +260,10 @@ a{
     margin-bottom: 1.7vw;
     border-radius: .2vw;
     background-color: #992f4a;
-    padding: .4vw;
+    padding-left: .6vw;
+    padding-right: .6vw;
+    padding-top: .4vw;
+    padding-bottom: .4vw;
     border: .2vw solid white;
     color:white;
     text-decoration: none;
@@ -278,7 +281,7 @@ a{
    position: absolute;
    opacity: 0;
    top: .1vw;
-   left: 13.75vw;
+   left: 13.5vw;
    transition: 0.5s;
 }
 
